@@ -13,11 +13,11 @@ using System.Windows.Forms;
 
 namespace coffee_shop_test
 {
-    public partial class AdminForm : Form
+    public partial class ManagerForm : Form
     {
         CategoryService _categoryService = new CategoryService();
         ItemService _itemService = new ItemService();
-        public AdminForm()
+        public ManagerForm()
         {
             InitializeComponent();
         }
@@ -42,7 +42,14 @@ namespace coffee_shop_test
 
         private void btnCategory_Click(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form loginForm = new Login();
+            loginForm.ShowDialog();
         }
     }
 }

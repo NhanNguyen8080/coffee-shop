@@ -45,10 +45,15 @@ namespace coffee_shop_test
             List<Item> items = _itemService.GetAll();
             if (items != null)
             {
+                var status = "";
                 foreach (Item item in items)
                 {
                     Category category = _categoryService.GetAll().Where(p => p.TypeId == item.TypeId).FirstOrDefault();
-                    addItem(item.ItemId, item.ItemName, item.Price.ToString(), item.Image, category.TypeName);
+                    if (!item.Status)
+                    {
+                        status = "Sold out";
+                    }
+                    addItem(item.ItemId, item.ItemName, item.Price.ToString(), item.Image, category.TypeName, status);
                 }
             }
         }
@@ -98,7 +103,7 @@ namespace coffee_shop_test
         //    AddControls(new frmItem());
         //}
 
-        public void addItem(int ItemID, string ItemName, String ItemPrice, String icon, String category)
+        public void addItem(int ItemID, string ItemName, String ItemPrice, String icon, String category, String status)
         {
             Widget w = new Widget();
             w.Size = new Size(320, 180);
@@ -108,6 +113,7 @@ namespace coffee_shop_test
             w.PCategory = category;
             w.PImage = System.Drawing.Image.FromFile(icon);
             LayoutPanelItem.Controls.Add(w);
+            w.PStatus = status;
             w.OnSelect += (ss, ee) =>
             {
                 var wdg = (Widget)ss;
@@ -154,10 +160,12 @@ namespace coffee_shop_test
             List<Item> items = _itemService.GetAll();
             if (items != null)
             {
+                var status = "";
                 foreach (var item in items)
                 {
+                    status = "Sold out";
                     Category category = _categoryService.GetAll().Where(p => p.TypeId == item.TypeId).FirstOrDefault();
-                    addItem(item.ItemId, item.ItemName, item.Price.ToString(), item.Image, category.TypeName);
+                    addItem(item.ItemId, item.ItemName, item.Price.ToString(), item.Image, category.TypeName, status);
                 }
             }
 
@@ -167,6 +175,13 @@ namespace coffee_shop_test
         {
             dgvOrderList.Rows.Clear();
             lbMoneyTotal.Text = "$0";
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form loginForm = new Login();
+            loginForm.ShowDialog();
         }
     }
 }

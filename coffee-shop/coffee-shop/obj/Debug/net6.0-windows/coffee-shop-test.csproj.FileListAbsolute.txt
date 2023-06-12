@@ -67,7 +67,6 @@ C:\Users\talax\OneDrive\Máy tính\coffee-shop-test\coffee-shop-test\obj\Debug\n
 C:\Users\talax\OneDrive\Máy tính\coffee-shop-test\coffee-shop-test\obj\Debug\net6.0-windows\coffee_shop_test.AdminForm.resources
 C:\Users\talax\OneDrive\Máy tính\coffee-shop-test\coffee-shop-test\obj\Debug\net6.0-windows\coffee_shop_test.PosForm.resources
 C:\Users\talax\OneDrive\Máy tính\PRN-group-project\coffee-shop-group-project\coffee-shop\coffee-shop\obj\Debug\net6.0-windows\coffee-shop-test.csproj.AssemblyReference.cache
-C:\Users\talax\OneDrive\Máy tính\PRN-group-project\coffee-shop-group-project\coffee-shop\coffee-shop\obj\Debug\net6.0-windows\coffee_shop_test.AdminForm.resources
 C:\Users\talax\OneDrive\Máy tính\PRN-group-project\coffee-shop-group-project\coffee-shop\coffee-shop\obj\Debug\net6.0-windows\coffee_shop_test.Components.Widget.resources
 C:\Users\talax\OneDrive\Máy tính\PRN-group-project\coffee-shop-group-project\coffee-shop\coffee-shop\obj\Debug\net6.0-windows\coffee_shop_test.Login.resources
 C:\Users\talax\OneDrive\Máy tính\PRN-group-project\coffee-shop-group-project\coffee-shop\coffee-shop\obj\Debug\net6.0-windows\coffee_shop_test.PosForm.resources
@@ -135,3 +134,8 @@ C:\Users\talax\OneDrive\Máy tính\PRN-group-project\coffee-shop-group-project\c
 C:\Users\talax\OneDrive\Máy tính\PRN-group-project\coffee-shop-group-project\coffee-shop\coffee-shop\obj\Debug\net6.0-windows\coffee-shop-test.genruntimeconfig.cache
 C:\Users\talax\OneDrive\Máy tính\PRN-group-project\coffee-shop-group-project\coffee-shop\coffee-shop\obj\Debug\net6.0-windows\ref\coffee-shop-test.dll
 C:\Users\talax\OneDrive\Máy tính\PRN-group-project\coffee-shop-group-project\coffee-shop\coffee-shop\obj\Debug\net6.0-windows\coffee_shop_test.SetSttForm.resources
+C:\Users\talax\OneDrive\Máy tính\PRN-group-project\coffee-shop-group-project\coffee-shop\coffee-shop\obj\Debug\net6.0-windows\coffee_shop_test.CategoryManagementForm.resources
+C:\Users\talax\OneDrive\Máy tính\PRN-group-project\coffee-shop-group-project\coffee-shop\coffee-shop\obj\Debug\net6.0-windows\coffee_shop_test.ItemManagementForm.resources
+C:\Users\talax\OneDrive\Máy tính\PRN-group-project\coffee-shop-group-project\coffee-shop\coffee-shop\obj\Debug\net6.0-windows\coffee_shop_test.ManagerForm.resources
+C:\Users\talax\OneDrive\Máy tính\PRN-group-project\coffee-shop-group-project\coffee-shop\coffee-shop\obj\Debug\net6.0-windows\coffee_shop_test.ReportForm.resources
+C:\Users\talax\OneDrive\Máy tính\PRN-group-project\coffee-shop-group-project\coffee-shop\coffee-shop\obj\Debug\net6.0-windows\coffee_shop_test.StaffMangementForm.resources

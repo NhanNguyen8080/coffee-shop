@@ -17,6 +17,7 @@ namespace coffee_shop_test
         public Login()
         {
             InitializeComponent();
+            txtPassword.PasswordChar = '*';
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -28,23 +29,23 @@ namespace coffee_shop_test
         {
             String username = txtUsername.Text;
             String password = txtPassword.Text;
-            if (txtUsername.Text.Trim().Length > 0)
+            if (txtUsername.Text.Trim().Equals(""))
             {
                 MessageBox.Show("Please enter username!!!", "Notification", MessageBoxButtons.OK);
                 return;
             }
-            if (txtPassword.Text.Trim().Length > 0)
+            if (txtPassword.Text.Trim().Equals(""))
             {
                 MessageBox.Show("Please enter password!!!", "Notification", MessageBoxButtons.OK);
                 return;
             }
-            if (txtUsername.Text.Trim().Length > 0 && txtPassword.Text.Trim().Length > 0)
+            if (txtUsername.Text.Trim().Equals("") && txtPassword.Text.Trim().Equals(""))
             {
                 MessageBox.Show("Please enter username and password!!!", "Notification", MessageBoxButtons.OK);
                 return;
             }
             var user = _userService.GetAll().Where(p => p.Username.Equals(username)).FirstOrDefault();
-            if (user != null)
+            if (user == null)
             {
                 MessageBox.Show("User does not exist!", "Notification", MessageBoxButtons.OK);
                 return;
@@ -54,12 +55,26 @@ namespace coffee_shop_test
                 MessageBox.Show("Invalid password!", "Notification", MessageBoxButtons.OK);
                 return;
             }
-            if (user != null && !user.Password.Equals(password))
+            if (user == null && !user.Password.Equals(password))
             {
                 MessageBox.Show("Invalid username and password!", "Notification!", MessageBoxButtons.OK);
                 return;
             }
-            //if (user.UserRole.Equals(""))
+            if (user.UserRole == 2)
+            {
+                this.Hide();
+                Form managerForm = new ManagerForm();
+                managerForm.ShowDialog();
+                return;
+            }
+            if (user.UserRole == 3)
+            {
+                this.Hide();
+                Form staffForm = new StaffForm();
+                staffForm.ShowDialog();
+                return;
+            }
+
         }
     }
 }
