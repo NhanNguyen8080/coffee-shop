@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Repository.Models.Services
 {
-    internal class OrderService
+    public class OrderService : ServicesBase<Order>
     {
     }
 }

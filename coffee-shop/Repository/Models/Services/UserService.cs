@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Repository.Models.Services
 {
-    internal class UserService
+    public class UserService : ServicesBase<User>
     {
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Repository.Models.Services
 {
-    internal class CategoryService
+    public class CategoryService : ServicesBase<Category>
     {
     }
 }
