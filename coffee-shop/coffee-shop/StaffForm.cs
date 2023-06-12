@@ -17,7 +17,7 @@ namespace coffee_shop_test
 {
     public partial class StaffForm : Form
     {
-        CoffeeShopTestContext _context;
+        CoffeeShopDBContext _context;
         CategoryService _categoryService = new CategoryService();
         ItemService _itemService = new ItemService();
         public StaffForm()
@@ -47,8 +47,8 @@ namespace coffee_shop_test
             {
                 foreach (Item item in items)
                 {
-                    Category category = _categoryService.GetAll().Where(p => p.CategoryId == item.CategoryId).FirstOrDefault();
-                    addItem(item.ItemId, item.ItemName, item.ItemPrice.ToString(), item.ItemImage, category.CategoryName);
+                    Category category = _categoryService.GetAll().Where(p => p.TypeId == item.TypeId).FirstOrDefault();
+                    addItem(item.ItemId, item.ItemName, item.Price.ToString(), item.Image, category.TypeName);
                 }
             }
         }
@@ -69,7 +69,7 @@ namespace coffee_shop_test
                     b.Size = new Size(207, 47);
                     b.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
                     b.TextAlign = (HorizontalAlignment)ContentAlignment.MiddleLeft;
-                    b.Text = category.CategoryName.ToString();
+                    b.Text = category.TypeName.ToString();
                     b.Location = new Point(0, location);
                     b.Cursor = Cursors.Hand;
                     //b.Image = category.Icon.ToString();
@@ -156,8 +156,8 @@ namespace coffee_shop_test
             {
                 foreach (var item in items)
                 {
-                    Category category = _categoryService.GetAll().Where(p => p.CategoryId == item.CategoryId).FirstOrDefault();
-                    addItem(item.ItemId, item.ItemName, item.ItemPrice.ToString(), item.ItemImage, category.CategoryName);
+                    Category category = _categoryService.GetAll().Where(p => p.TypeId == item.TypeId).FirstOrDefault();
+                    addItem(item.ItemId, item.ItemName, item.Price.ToString(), item.Image, category.TypeName);
                 }
             }
 

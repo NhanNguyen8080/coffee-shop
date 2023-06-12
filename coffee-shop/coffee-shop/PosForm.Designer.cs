@@ -47,6 +47,8 @@
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Panel = new Guna.UI2.WinForms.Guna2Panel();
             CategoryPanel = new Guna.UI2.WinForms.Guna2Panel();
             panel1 = new Panel();
@@ -64,6 +66,7 @@
             dgvCost = new DataGridViewTextBoxColumn();
             btnClearAll = new Guna.UI2.WinForms.Guna2Button();
             lbCurrentOrder = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            btnSetStatus = new Guna.UI2.WinForms.Guna2Button();
             Panel.SuspendLayout();
             CategoryPanel.SuspendLayout();
             pnItemList.SuspendLayout();
@@ -152,6 +155,7 @@
             // LayoutPanelItem
             // 
             LayoutPanelItem.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            LayoutPanelItem.AutoScroll = true;
             LayoutPanelItem.Location = new Point(200, 85);
             LayoutPanelItem.Name = "LayoutPanelItem";
             LayoutPanelItem.Size = new Size(689, 704);
@@ -190,7 +194,7 @@
             lbMoneyTotal.BackColor = Color.Transparent;
             lbMoneyTotal.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             lbMoneyTotal.ForeColor = Color.Orange;
-            lbMoneyTotal.Location = new Point(266, 19);
+            lbMoneyTotal.Location = new Point(249, 19);
             lbMoneyTotal.Name = "lbMoneyTotal";
             lbMoneyTotal.Size = new Size(35, 39);
             lbMoneyTotal.TabIndex = 4;
@@ -323,17 +327,35 @@
             lbCurrentOrder.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             lbCurrentOrder.BackColor = Color.Transparent;
             lbCurrentOrder.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lbCurrentOrder.Location = new Point(39, 33);
+            lbCurrentOrder.Location = new Point(15, 33);
             lbCurrentOrder.Name = "lbCurrentOrder";
             lbCurrentOrder.Size = new Size(123, 30);
             lbCurrentOrder.TabIndex = 9;
             lbCurrentOrder.Text = "CurrentOrder";
+            // 
+            // btnSetStatus
+            // 
+            btnSetStatus.BorderRadius = 20;
+            btnSetStatus.CustomizableEdges = customizableEdges15;
+            btnSetStatus.DisabledState.BorderColor = Color.DarkGray;
+            btnSetStatus.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnSetStatus.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnSetStatus.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnSetStatus.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            btnSetStatus.ForeColor = Color.White;
+            btnSetStatus.Location = new Point(691, 18);
+            btnSetStatus.Name = "btnSetStatus";
+            btnSetStatus.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            btnSetStatus.Size = new Size(172, 45);
+            btnSetStatus.TabIndex = 8;
+            btnSetStatus.Text = "Set Item's Status";
             // 
             // PosForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1205, 789);
+            Controls.Add(btnSetStatus);
             Controls.Add(pnItemList);
             Controls.Add(LayoutPanelItem);
             Controls.Add(txtSearch);
@@ -372,5 +394,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lbMoneyTotal;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbTotal;
         private Guna.UI2.WinForms.Guna2Button btnPay;
+        private Guna.UI2.WinForms.Guna2Button btnSetStatus;
     }
 }

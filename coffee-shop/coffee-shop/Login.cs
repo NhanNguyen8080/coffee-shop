@@ -43,11 +43,23 @@ namespace coffee_shop_test
                 MessageBox.Show("Please enter username and password!!!", "Notification", MessageBoxButtons.OK);
                 return;
             }
-            var user = _userService.GetAll().Where(p => p.Username.Equals(username) && p.Upass.Equals(password)).FirstOrDefault();
+            var user = _userService.GetAll().Where(p => p.Username.Equals(username)).FirstOrDefault();
             if (user != null)
             {
-
+                MessageBox.Show("User does not exist!", "Notification", MessageBoxButtons.OK);
+                return;
             }
+            if (!user.Password.Equals(password))
+            {
+                MessageBox.Show("Invalid password!", "Notification", MessageBoxButtons.OK);
+                return;
+            }
+            if (user != null && !user.Password.Equals(password))
+            {
+                MessageBox.Show("Invalid username and password!", "Notification!", MessageBoxButtons.OK);
+                return;
+            }
+            //if (user.UserRole.Equals(""))
         }
     }
 }

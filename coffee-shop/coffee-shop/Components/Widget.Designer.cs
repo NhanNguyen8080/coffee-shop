@@ -35,6 +35,7 @@
             imgImage = new PictureBox();
             lbPrice = new Label();
             lbTitle = new Label();
+            lbStatus = new Label();
             pnWidget.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)imgImage).BeginInit();
             SuspendLayout();
@@ -43,6 +44,7 @@
             // 
             pnWidget.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             pnWidget.BackColor = Color.White;
+            pnWidget.Controls.Add(lbStatus);
             pnWidget.Controls.Add(imgImage);
             pnWidget.Controls.Add(lbPrice);
             pnWidget.Controls.Add(lbTitle);
@@ -51,7 +53,7 @@
             pnWidget.Location = new Point(3, 3);
             pnWidget.Name = "pnWidget";
             pnWidget.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            pnWidget.Size = new Size(241, 124);
+            pnWidget.Size = new Size(290, 131);
             pnWidget.TabIndex = 0;
             pnWidget.Click += pnWidget_Click;
             // 
@@ -59,9 +61,9 @@
             // 
             imgImage.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             imgImage.Image = (Image)resources.GetObject("imgImage.Image");
-            imgImage.Location = new Point(116, 21);
+            imgImage.Location = new Point(161, 24);
             imgImage.Name = "imgImage";
-            imgImage.Size = new Size(112, 100);
+            imgImage.Size = new Size(126, 107);
             imgImage.SizeMode = PictureBoxSizeMode.StretchImage;
             imgImage.TabIndex = 2;
             imgImage.TabStop = false;
@@ -72,7 +74,7 @@
             lbPrice.AutoSize = true;
             lbPrice.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             lbPrice.ForeColor = Color.Orange;
-            lbPrice.Location = new Point(14, 83);
+            lbPrice.Location = new Point(3, 90);
             lbPrice.Name = "lbPrice";
             lbPrice.Size = new Size(68, 31);
             lbPrice.TabIndex = 1;
@@ -82,18 +84,27 @@
             // 
             lbTitle.AutoSize = true;
             lbTitle.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            lbTitle.Location = new Point(14, 15);
+            lbTitle.Location = new Point(3, 24);
             lbTitle.Name = "lbTitle";
             lbTitle.Size = new Size(96, 25);
             lbTitle.TabIndex = 0;
             lbTitle.Text = "Capuchino";
+            // 
+            // lbStatus
+            // 
+            lbStatus.AutoSize = true;
+            lbStatus.Location = new Point(194, 1);
+            lbStatus.Name = "lbStatus";
+            lbStatus.Size = new Size(49, 20);
+            lbStatus.TabIndex = 3;
+            lbStatus.Text = "Status";
             // 
             // Widget
             // 
             AutoScaleMode = AutoScaleMode.None;
             Controls.Add(pnWidget);
             Name = "Widget";
-            Size = new Size(247, 130);
+            Size = new Size(296, 137);
             pnWidget.ResumeLayout(false);
             pnWidget.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)imgImage).EndInit();
@@ -106,5 +117,6 @@
         public Label lbPrice;
         public Label lbTitle;
         public PictureBox imgImage;
+        private Label lbStatus;
     }
 }

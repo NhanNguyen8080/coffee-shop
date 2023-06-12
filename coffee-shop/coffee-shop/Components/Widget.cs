@@ -38,6 +38,12 @@ namespace coffee_shop_test.Components
             set { imgImage.Image = value; }
         }
 
+        public String PStatus
+        {
+            get { return lbStatus.Text; }
+            set { lbStatus.Text = value; }
+        }
+
         private void imgImage_Click(object sender, EventArgs e)
         {
             OnSelect?.Invoke(this, e);
