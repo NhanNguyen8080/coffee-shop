@@ -35,7 +35,7 @@ namespace coffee_shop_test.Components
         public String PStatus
         {
             get { return lbStatus.Text; }
-            set { lbStatus.Text = Toggle.ToString(); }
+            set { lbStatus.Text = value; }
         }
     }
 }
