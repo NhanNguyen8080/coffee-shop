@@ -23,18 +23,18 @@ namespace coffee_shop_test
 
         }
 
-        public void addItem(int ItemID, string ItemName, String ItemPrice, String icon, String category, String status)
+        public void addItem(int ItemID, string ItemName, decimal ItemPrice, String icon, int typeID, bool status)
         {
+            
             SetSttWidget w = new SetSttWidget();
             //w.Size = new Size(320, 180);
             w.id = ItemID;
             w.PName = ItemName;
             w.PPrice = ItemPrice;
-            w.PCategory = category;
+            w.TypeID = typeID;
             w.PImage = System.Drawing.Image.FromFile(icon);
             w.PStatus = status;
             LayoutPanel.Controls.Add(w);
-
         }
 
         private void SetSttForm_Load(object sender, EventArgs e)
@@ -42,15 +42,15 @@ namespace coffee_shop_test
             List<Item> items = _itemService.GetAll();
             if (items != null)
             {
+                //var status = "False";
                 foreach (Item item in items)
                 {
-                    var status = "False";
+                    //if (item.Status)
+                    //{
+                    //    status = "True";
+                    //}
                     Category category = _categoryService.GetAll().Where(p => p.TypeId == item.TypeId).FirstOrDefault();
-                    if (item.Status)
-                    {
-                        status = "True";
-                    }
-                    addItem(item.ItemId, item.ItemName, item.Price.ToString(), item.Image, category.TypeName, status);
+                    addItem(item.ItemId, item.ItemName, item.Price, item.Image, category.TypeId, item.Status);
                 }
             }
         }
@@ -58,6 +58,21 @@ namespace coffee_shop_test
         private void guna2ControlBox1_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            //List<SetSttWidget> setSttWidgets = new List<SetSttWidget>();
+            //setSttWidgets = LayoutPanel.Controls.Cast<SetSttWidget>().ToList();
+            //foreach(SetSttWidget setSttWidget in setSttWidgets)
+            //{
+
+            //}
+            List<Item> items = LayoutPanel.Controls.Cast<Item>().ToList();
+            foreach (Item item in items)
+            {
+                _itemService.Update(item);
+            }
         }
     }
 }

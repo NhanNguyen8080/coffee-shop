@@ -18,24 +18,34 @@ namespace coffee_shop_test.Components
         }
 
         public int id { get; set; }
-        public String PPrice { get; set; }
-        public String PCategory { get; set; }
         public String PName
         {
             get { return lbTitle.Text; }
             set { lbTitle.Text = value; }
         }
 
+        public int TypeID { get; set; }
         public Image PImage
         {
             get { return imgImage.Image; }
             set { imgImage.Image = value; }
         }
+        public decimal PPrice { get; set; }
 
-        public String PStatus
+        public bool PStatus
         {
-            get { return lbStatus.Text; }
-            set { lbStatus.Text = value; }
+            get { return ckbSoldOut.Checked; }
+            set
+            {
+                if (value)
+                {
+                    ckbSoldOut.CheckState = CheckState.Unchecked;
+                }
+                else
+                {
+                    ckbSoldOut.CheckState = CheckState.Checked;
+                }
+            }
         }
     }
 }

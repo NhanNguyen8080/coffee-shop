@@ -31,8 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SetSttWidget));
             imgImage = new PictureBox();
             lbTitle = new Label();
-            Toggle = new Toggle();
-            lbStatus = new Label();
+            ckbSoldOut = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)imgImage).BeginInit();
             SuspendLayout();
             // 
@@ -57,31 +56,23 @@
             lbTitle.TabIndex = 4;
             lbTitle.Text = "Capuchino";
             // 
-            // Toggle
+            // ckbSoldOut
             // 
-            Toggle.BackgroundImage = (Image)resources.GetObject("Toggle.BackgroundImage");
-            Toggle.BackgroundImageLayout = ImageLayout.Stretch;
-            Toggle.Check = false;
-            Toggle.Location = new Point(229, 42);
-            Toggle.Name = "Toggle";
-            Toggle.Size = new Size(111, 57);
-            Toggle.TabIndex = 5;
-            // 
-            // lbStatus
-            // 
-            lbStatus.AutoSize = true;
-            lbStatus.Location = new Point(248, 10);
-            lbStatus.Name = "lbStatus";
-            lbStatus.Size = new Size(50, 20);
-            lbStatus.TabIndex = 6;
-            lbStatus.Text = "label1";
+            ckbSoldOut.AutoSize = true;
+            ckbSoldOut.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            ckbSoldOut.ForeColor = Color.LightCoral;
+            ckbSoldOut.Location = new Point(191, 55);
+            ckbSoldOut.Name = "ckbSoldOut";
+            ckbSoldOut.Size = new Size(142, 42);
+            ckbSoldOut.TabIndex = 5;
+            ckbSoldOut.Text = "Sold out";
+            ckbSoldOut.UseVisualStyleBackColor = true;
             // 
             // SetSttWidget
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(lbStatus);
-            Controls.Add(Toggle);
+            Controls.Add(ckbSoldOut);
             Controls.Add(lbTitle);
             Controls.Add(imgImage);
             DoubleBuffered = true;
@@ -96,7 +87,6 @@
 
         public PictureBox imgImage;
         public Label lbTitle;
-        private Toggle Toggle;
-        private Label lbStatus;
+        private CheckBox ckbSoldOut;
     }
 }
