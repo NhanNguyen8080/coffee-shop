@@ -37,18 +37,20 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PosForm));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Panel = new Guna.UI2.WinForms.Guna2Panel();
             CategoryPanel = new Guna.UI2.WinForms.Guna2Panel();
             panel1 = new Panel();
@@ -56,6 +58,7 @@
             txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             LayoutPanelItem = new FlowLayoutPanel();
             pnItemList = new Panel();
+            btnRemove = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             lbMoneyTotal = new Guna.UI2.WinForms.Guna2HtmlLabel();
             btnPay = new Guna.UI2.WinForms.Guna2Button();
@@ -164,6 +167,7 @@
             // pnItemList
             // 
             pnItemList.BackColor = Color.White;
+            pnItemList.Controls.Add(btnRemove);
             pnItemList.Controls.Add(guna2Panel1);
             pnItemList.Controls.Add(dgvOrderList);
             pnItemList.Controls.Add(btnClearAll);
@@ -174,17 +178,35 @@
             pnItemList.Size = new Size(316, 789);
             pnItemList.TabIndex = 7;
             // 
+            // btnRemove
+            // 
+            btnRemove.CustomizableEdges = customizableEdges9;
+            btnRemove.DisabledState.BorderColor = Color.DarkGray;
+            btnRemove.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnRemove.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnRemove.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnRemove.FillColor = Color.LightCoral;
+            btnRemove.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnRemove.ForeColor = Color.White;
+            btnRemove.Location = new Point(102, 594);
+            btnRemove.Name = "btnRemove";
+            btnRemove.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnRemove.Size = new Size(117, 35);
+            btnRemove.TabIndex = 11;
+            btnRemove.Text = "Remove Item";
+            btnRemove.Click += btnRemove_Click;
+            // 
             // guna2Panel1
             // 
             guna2Panel1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             guna2Panel1.Controls.Add(lbMoneyTotal);
             guna2Panel1.Controls.Add(btnPay);
             guna2Panel1.Controls.Add(lbTotal);
-            guna2Panel1.CustomizableEdges = customizableEdges11;
+            guna2Panel1.CustomizableEdges = customizableEdges13;
             guna2Panel1.FillColor = Color.White;
             guna2Panel1.Location = new Point(3, 635);
             guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges14;
             guna2Panel1.Size = new Size(313, 142);
             guna2Panel1.TabIndex = 12;
             // 
@@ -205,7 +227,7 @@
             btnPay.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             btnPay.AutoRoundedCorners = true;
             btnPay.BorderRadius = 27;
-            btnPay.CustomizableEdges = customizableEdges9;
+            btnPay.CustomizableEdges = customizableEdges11;
             btnPay.DisabledState.BorderColor = Color.DarkGray;
             btnPay.DisabledState.CustomBorderColor = Color.DarkGray;
             btnPay.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -215,7 +237,7 @@
             btnPay.ForeColor = Color.White;
             btnPay.Location = new Point(0, 86);
             btnPay.Name = "btnPay";
-            btnPay.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnPay.ShadowDecoration.CustomizableEdges = customizableEdges12;
             btnPay.Size = new Size(313, 56);
             btnPay.TabIndex = 3;
             btnPay.Text = "Pay";
@@ -280,7 +302,7 @@
             dgvOrderList.RowHeadersWidth = 20;
             dgvOrderList.RowTemplate.Height = 40;
             dgvOrderList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvOrderList.Size = new Size(310, 537);
+            dgvOrderList.Size = new Size(310, 508);
             dgvOrderList.TabIndex = 11;
             // 
             // Column1
@@ -306,7 +328,7 @@
             // btnClearAll
             // 
             btnClearAll.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnClearAll.CustomizableEdges = customizableEdges13;
+            btnClearAll.CustomizableEdges = customizableEdges15;
             btnClearAll.DisabledState.BorderColor = Color.DarkGray;
             btnClearAll.DisabledState.CustomBorderColor = Color.DarkGray;
             btnClearAll.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -316,7 +338,7 @@
             btnClearAll.ForeColor = Color.White;
             btnClearAll.Location = new Point(196, 32);
             btnClearAll.Name = "btnClearAll";
-            btnClearAll.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            btnClearAll.ShadowDecoration.CustomizableEdges = customizableEdges16;
             btnClearAll.Size = new Size(117, 31);
             btnClearAll.TabIndex = 10;
             btnClearAll.Text = "Clear All";
@@ -336,7 +358,7 @@
             // btnSetStatus
             // 
             btnSetStatus.BorderRadius = 20;
-            btnSetStatus.CustomizableEdges = customizableEdges15;
+            btnSetStatus.CustomizableEdges = customizableEdges17;
             btnSetStatus.DisabledState.BorderColor = Color.DarkGray;
             btnSetStatus.DisabledState.CustomBorderColor = Color.DarkGray;
             btnSetStatus.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -345,10 +367,11 @@
             btnSetStatus.ForeColor = Color.White;
             btnSetStatus.Location = new Point(691, 18);
             btnSetStatus.Name = "btnSetStatus";
-            btnSetStatus.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            btnSetStatus.ShadowDecoration.CustomizableEdges = customizableEdges18;
             btnSetStatus.Size = new Size(172, 45);
             btnSetStatus.TabIndex = 8;
             btnSetStatus.Text = "Set Item's Status";
+            btnSetStatus.Click += btnSetStatus_Click;
             // 
             // PosForm
             // 
@@ -395,5 +418,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lbTotal;
         private Guna.UI2.WinForms.Guna2Button btnPay;
         private Guna.UI2.WinForms.Guna2Button btnSetStatus;
+        private Guna.UI2.WinForms.Guna2Button btnRemove;
     }
 }

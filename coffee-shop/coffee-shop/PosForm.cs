@@ -156,5 +156,24 @@ namespace coffee_shop_test
             dgvOrderList.Rows.Clear();
             lbMoneyTotal.Text = "$0";
         }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            if (dgvOrderList.Rows.Count == 0)
+            {
+                MessageBox.Show("Order List is empty", "Notification", MessageBoxButtons.OK);
+            }
+            else
+            {
+                int indexRow = dgvOrderList.CurrentCell.RowIndex;
+                dgvOrderList.Rows.RemoveAt(indexRow);
+            }
+        }
+
+        private void btnSetStatus_Click(object sender, EventArgs e)
+        {
+            var SetSttForm = new SetSttForm();
+            SetSttForm.ShowDialog();
+        }
     }
 }

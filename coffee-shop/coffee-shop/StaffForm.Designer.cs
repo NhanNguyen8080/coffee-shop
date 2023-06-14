@@ -53,12 +53,14 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Panel = new Guna.UI2.WinForms.Guna2Panel();
             CategoryPanel = new Guna.UI2.WinForms.Guna2Panel();
             btnLogout = new Guna.UI2.WinForms.Guna2Button();
@@ -74,6 +76,7 @@
             btnPay = new Guna.UI2.WinForms.Guna2Button();
             lbTotal = new Guna.UI2.WinForms.Guna2HtmlLabel();
             pnItemList = new Panel();
+            btnRemove = new Guna.UI2.WinForms.Guna2Button();
             lbCurrentOrder = new Guna.UI2.WinForms.Guna2HtmlLabel();
             btnClearAll = new Guna.UI2.WinForms.Guna2Button();
             dgvOrderList = new DataGridView();
@@ -254,7 +257,7 @@
             guna2Panel1.Controls.Add(lbTotal);
             guna2Panel1.CustomizableEdges = customizableEdges21;
             guna2Panel1.FillColor = Color.White;
-            guna2Panel1.Location = new Point(3, 465);
+            guna2Panel1.Location = new Point(3, 474);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges22;
             guna2Panel1.Size = new Size(313, 142);
@@ -306,6 +309,7 @@
             // pnItemList
             // 
             pnItemList.BackColor = Color.White;
+            pnItemList.Controls.Add(btnRemove);
             pnItemList.Controls.Add(guna2Panel1);
             pnItemList.Controls.Add(lbCurrentOrder);
             pnItemList.Controls.Add(btnClearAll);
@@ -315,6 +319,24 @@
             pnItemList.Name = "pnItemList";
             pnItemList.Size = new Size(316, 619);
             pnItemList.TabIndex = 4;
+            // 
+            // btnRemove
+            // 
+            btnRemove.CustomizableEdges = customizableEdges23;
+            btnRemove.DisabledState.BorderColor = Color.DarkGray;
+            btnRemove.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnRemove.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnRemove.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnRemove.FillColor = Color.LightCoral;
+            btnRemove.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnRemove.ForeColor = Color.White;
+            btnRemove.Location = new Point(100, 433);
+            btnRemove.Name = "btnRemove";
+            btnRemove.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            btnRemove.Size = new Size(117, 35);
+            btnRemove.TabIndex = 10;
+            btnRemove.Text = "Remove Item";
+            btnRemove.Click += btnRemove_Click;
             // 
             // lbCurrentOrder
             // 
@@ -330,7 +352,7 @@
             // btnClearAll
             // 
             btnClearAll.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnClearAll.CustomizableEdges = customizableEdges23;
+            btnClearAll.CustomizableEdges = customizableEdges25;
             btnClearAll.DisabledState.BorderColor = Color.DarkGray;
             btnClearAll.DisabledState.CustomBorderColor = Color.DarkGray;
             btnClearAll.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -340,7 +362,7 @@
             btnClearAll.ForeColor = Color.White;
             btnClearAll.Location = new Point(179, 20);
             btnClearAll.Name = "btnClearAll";
-            btnClearAll.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            btnClearAll.ShadowDecoration.CustomizableEdges = customizableEdges26;
             btnClearAll.Size = new Size(117, 31);
             btnClearAll.TabIndex = 7;
             btnClearAll.Text = "Clear All";
@@ -395,7 +417,7 @@
             dgvOrderList.RowHeadersWidth = 20;
             dgvOrderList.RowTemplate.Height = 40;
             dgvOrderList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvOrderList.Size = new Size(307, 391);
+            dgvOrderList.Size = new Size(307, 359);
             dgvOrderList.TabIndex = 6;
             // 
             // Column1
@@ -421,6 +443,7 @@
             // LayoutPanelItem
             // 
             LayoutPanelItem.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            LayoutPanelItem.AutoScroll = true;
             LayoutPanelItem.Location = new Point(201, 121);
             LayoutPanelItem.Name = "LayoutPanelItem";
             LayoutPanelItem.Size = new Size(661, 545);
@@ -429,7 +452,7 @@
             // btnSetStatus
             // 
             btnSetStatus.BorderRadius = 20;
-            btnSetStatus.CustomizableEdges = customizableEdges25;
+            btnSetStatus.CustomizableEdges = customizableEdges27;
             btnSetStatus.DisabledState.BorderColor = Color.DarkGray;
             btnSetStatus.DisabledState.CustomBorderColor = Color.DarkGray;
             btnSetStatus.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -438,7 +461,7 @@
             btnSetStatus.ForeColor = Color.White;
             btnSetStatus.Location = new Point(665, 59);
             btnSetStatus.Name = "btnSetStatus";
-            btnSetStatus.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            btnSetStatus.ShadowDecoration.CustomizableEdges = customizableEdges28;
             btnSetStatus.Size = new Size(172, 45);
             btnSetStatus.TabIndex = 9;
             btnSetStatus.Text = "Set Item's Status";
@@ -497,5 +520,6 @@
         private PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2Button btnSetStatus;
         private Guna.UI2.WinForms.Guna2Button btnLogout;
+        private Guna.UI2.WinForms.Guna2Button btnRemove;
     }
 }

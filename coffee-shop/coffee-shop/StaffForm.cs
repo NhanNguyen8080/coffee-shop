@@ -183,5 +183,18 @@ namespace coffee_shop_test
             Form loginForm = new Login();
             loginForm.ShowDialog();
         }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            if (dgvOrderList.Rows.Count == 0)
+            {
+                MessageBox.Show("Order List is empty", "Notification", MessageBoxButtons.OK);
+            }
+            else
+            {
+                int indexRow = dgvOrderList.CurrentCell.RowIndex;
+                dgvOrderList.Rows.RemoveAt(indexRow);
+            }
+        }
     }
 }
