@@ -23,16 +23,17 @@ namespace coffee_shop_test
 
         }
 
-        public void addItem(int ItemID, string ItemName, decimal ItemPrice, String icon, int typeID, bool status)
+        public void addItem(int ItemID, string ItemName, decimal ItemPrice, String image, int typeID, bool status)
         {
-            
+
             SetSttWidget w = new SetSttWidget();
             //w.Size = new Size(320, 180);
             w.id = ItemID;
             w.PName = ItemName;
             w.PPrice = ItemPrice;
             w.TypeID = typeID;
-            w.PImage = System.Drawing.Image.FromFile(icon);
+            w.PImage = image;
+            w.ImgSetup();
             w.PStatus = status;
             LayoutPanel.Controls.Add(w);
         }
@@ -68,11 +69,33 @@ namespace coffee_shop_test
             //{
 
             //}
-            List<Item> items = LayoutPanel.Controls.Cast<Item>().ToList();
+            List<Item> items = new List<Item>();
+            List<SetSttWidget> setSttWidgets = new List<SetSttWidget>();
+            setSttWidgets = LayoutPanel.Controls.Cast<SetSttWidget>().ToList();
+            foreach (SetSttWidget setSttWidget in setSttWidgets)
+            {
+                if (setSttWidget != null)
+                {
+                    Item item = new Item()
+                    {
+                        ItemId = setSttWidget.id,
+                        ItemName = setSttWidget.PName,
+                        TypeId = setSttWidget.TypeID,
+                        Price = setSttWidget.PPrice,
+                        Image = setSttWidget.PImage,
+                        Status = !setSttWidget.GetCkb()
+                    };
+                    items.Add(item);
+                }
+            }
             foreach (Item item in items)
             {
-                _itemService.Update(item);
+                if (item != null)
+                {
+                    _itemService.updateStatus(item, item.Status);
+                }
             }
+            this.Close();    
         }
     }
 }

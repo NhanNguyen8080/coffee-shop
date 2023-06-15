@@ -173,7 +173,11 @@ namespace coffee_shop_test
         private void btnSetStatus_Click(object sender, EventArgs e)
         {
             var SetSttForm = new SetSttForm();
-            SetSttForm.ShowDialog();
+            DialogResult result = SetSttForm.ShowDialog();
+            if (result.Equals(DialogResult.OK))
+            {
+                this.Refresh();
+            }
         }
     }
 }

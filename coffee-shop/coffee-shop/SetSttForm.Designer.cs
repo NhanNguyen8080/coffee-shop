@@ -62,6 +62,7 @@
             // 
             btnSave.BorderRadius = 20;
             btnSave.CustomizableEdges = customizableEdges1;
+            btnSave.DialogResult = DialogResult.OK;
             btnSave.DisabledState.BorderColor = Color.DarkGray;
             btnSave.DisabledState.CustomBorderColor = Color.DarkGray;
             btnSave.DisabledState.FillColor = Color.FromArgb(169, 169, 169);

@@ -25,11 +25,14 @@ namespace coffee_shop_test.Components
         }
 
         public int TypeID { get; set; }
-        public Image PImage
+
+        public String PImage { get; set; }
+
+        public void ImgSetup()
         {
-            get { return imgImage.Image; }
-            set { imgImage.Image = value; }
+            imgImage.Image = System.Drawing.Image.FromFile(PImage);
         }
+
         public decimal PPrice { get; set; }
 
         public bool PStatus
@@ -47,5 +50,11 @@ namespace coffee_shop_test.Components
                 }
             }
         }
+
+        public bool GetCkb()
+        {
+            return ckbSoldOut.Checked;
+        }
+
     }
 }
