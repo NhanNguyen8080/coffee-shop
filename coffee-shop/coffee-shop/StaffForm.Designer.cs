@@ -465,6 +465,7 @@
             btnSetStatus.Size = new Size(172, 45);
             btnSetStatus.TabIndex = 9;
             btnSetStatus.Text = "Set Item's Status";
+            btnSetStatus.Click += btnSetStatus_Click;
             // 
             // StaffForm
             // 

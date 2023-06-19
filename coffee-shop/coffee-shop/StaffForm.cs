@@ -196,5 +196,13 @@ namespace coffee_shop_test
                 dgvOrderList.Rows.RemoveAt(indexRow);
             }
         }
+
+        private void btnSetStatus_Click(object sender, EventArgs e)
+        {
+            var SetSttForm = new SetSttForm();
+            SetSttForm.ShowDialog();
+            this.Hide();
+            StaffForm_Load(sender, e);
+        }
     }
 }

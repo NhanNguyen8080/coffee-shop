@@ -22,8 +22,26 @@ namespace coffee_shop_test
         public PosForm()
         {
             InitializeComponent();
-        }
 
+        }
+        protected override void OnActivated(EventArgs e)
+        {
+            addCategory();
+            List<Item> items = _itemService.GetAll();
+            if (items != null)
+            {
+                foreach (Item item in items)
+                {
+                    var status = "Sold out";
+                    Category category = _categoryService.GetAll().Where(p => p.TypeId == item.TypeId).FirstOrDefault();
+                    if (item.Status)
+                    {
+                        status = "";
+                    }
+                    addItem(item.ItemId, item.ItemName, item.Price.ToString(), item.Image, category.TypeName, status);
+                }
+            }
+        }
         private void PosForm_Load(object sender, EventArgs e)
         {
             addCategory();
@@ -138,14 +156,14 @@ namespace coffee_shop_test
             List<Item> items = _itemService.GetAll();
             if (items != null)
             {
-                var status = "Sold out";
-                foreach (var item in items)
+                foreach (Item item in items)
                 {
+                    var status = "Sold out";
+                    Category category = _categoryService.GetAll().Where(p => p.TypeId == item.TypeId).FirstOrDefault();
                     if (item.Status)
                     {
                         status = "";
                     }
-                    Category category = _categoryService.GetAll().Where(p => p.TypeId == item.TypeId).FirstOrDefault();
                     addItem(item.ItemId, item.ItemName, item.Price.ToString(), item.Image, category.TypeName, status);
                 }
             }
@@ -173,11 +191,9 @@ namespace coffee_shop_test
         private void btnSetStatus_Click(object sender, EventArgs e)
         {
             var SetSttForm = new SetSttForm();
-            DialogResult result = SetSttForm.ShowDialog();
-            if (result.Equals(DialogResult.OK))
-            {
-                this.Refresh();
-            }
+            SetSttForm.ShowDialog();
+            
+
         }
     }
 }

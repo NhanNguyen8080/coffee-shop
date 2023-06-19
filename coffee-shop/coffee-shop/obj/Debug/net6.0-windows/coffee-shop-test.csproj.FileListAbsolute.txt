@@ -140,3 +140,4 @@ C:\Users\talax\OneDrive\Máy tính\PRN-group-project\coffee-shop-group-project\c
 C:\Users\talax\OneDrive\Máy tính\PRN-group-project\coffee-shop-group-project\coffee-shop\coffee-shop\obj\Debug\net6.0-windows\coffee_shop_test.ReportForm.resources
 C:\Users\talax\OneDrive\Máy tính\PRN-group-project\coffee-shop-group-project\coffee-shop\coffee-shop\obj\Debug\net6.0-windows\coffee_shop_test.StaffMangementForm.resources
 C:\Users\talax\OneDrive\Máy tính\PRN-group-project\coffee-shop-group-project\coffee-shop\coffee-shop\obj\Debug\net6.0-windows\coffee_shop_test.Components.SetSttWidget.resources
+C:\Users\talax\OneDrive\Máy tính\PRN-group-project\coffee-shop-group-project\coffee-shop\coffee-shop\obj\Debug\net6.0-windows\coffee_shop_test.BillForm.resources

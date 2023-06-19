@@ -95,7 +95,18 @@ namespace coffee_shop_test
                     _itemService.updateStatus(item, item.Status);
                 }
             }
-            this.Close();    
+            var fora = Application.OpenForms.Count;
+
+            //this.Close();
+            PosForm? posForm = Application.OpenForms["PosForm"] as PosForm;
+            if (posForm != null)
+            {
+                //posForm.ShowDialog();
+                posForm.Activate();
+            }
+            this.Close();
         }
+
+
     }
 }
