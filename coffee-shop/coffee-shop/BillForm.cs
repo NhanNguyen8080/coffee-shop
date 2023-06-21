@@ -43,6 +43,10 @@ namespace coffee_shop_test
                 dgvBill.Rows.Add(item);
             }
 
+        }
+
+        public void populateCashier(String data)
+        {
 
         }
     }

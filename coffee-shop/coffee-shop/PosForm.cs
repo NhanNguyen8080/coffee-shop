@@ -128,8 +128,8 @@ namespace coffee_shop_test
                         lbMoneyTotal.Text = "$" + calculateTotal().ToString();
                         return;
                     }
-                    string[] row = { "" + wdg.lbTitle.Text, "" + item.Cells[1].Value, "" + wdg.lbPrice.Text, "" + 5 };
-                    data.Add(row);
+                    //string[] row = { "" + wdg.lbTitle.Text, "" + item.Cells[1].Value, "" + wdg.lbPrice.Text, "" + 5 };
+                    //data.Add(row);
                 }
                 dgvOrderList.Rows.Add(new object[] { wdg.lbTitle.Text, 1, wdg.lbPrice.Text });
                 lbMoneyTotal.Text = "$" + calculateTotal().ToString();
