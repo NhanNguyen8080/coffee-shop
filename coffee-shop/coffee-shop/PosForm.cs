@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using coffee_shop_test.Components;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static Guna.UI2.Native.WinApi;
 
 namespace coffee_shop_test
 {
@@ -19,6 +20,8 @@ namespace coffee_shop_test
         CoffeeShopDBContext _context;
         CategoryService _categoryService = new CategoryService();
         ItemService _itemService = new ItemService();
+        List<string[]> data = new List<string[]>();
+
         public PosForm()
         {
             InitializeComponent();
@@ -125,6 +128,8 @@ namespace coffee_shop_test
                         lbMoneyTotal.Text = "$" + calculateTotal().ToString();
                         return;
                     }
+                    string[] row = { "" + wdg.lbTitle.Text, "" + item.Cells[1].Value, "" + wdg.lbPrice.Text, "" + 5 };
+                    data.Add(row);
                 }
                 dgvOrderList.Rows.Add(new object[] { wdg.lbTitle.Text, 1, wdg.lbPrice.Text });
                 lbMoneyTotal.Text = "$" + calculateTotal().ToString();
@@ -192,8 +197,16 @@ namespace coffee_shop_test
         {
             var SetSttForm = new SetSttForm();
             SetSttForm.ShowDialog();
-            
+
 
         }
+
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+            BillForm billForm = new BillForm();
+            billForm.populatedatagridview(data);
+            billForm.ShowDialog();
+        }
+
     }
 }

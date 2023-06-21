@@ -241,6 +241,7 @@
             btnPay.Size = new Size(313, 56);
             btnPay.TabIndex = 3;
             btnPay.Text = "Pay";
+            btnPay.Click += btnPay_Click;
             // 
             // lbTotal
             // 

@@ -16,5 +16,34 @@ namespace coffee_shop_test
         {
             InitializeComponent();
         }
+
+        public double calculateTotal()
+        {
+            double total = 0;
+            foreach (DataGridViewRow item in dgvBill.Rows)
+            {
+                total += double.Parse(item.Cells[2].Value.ToString().Replace("$", ""));
+            }
+            return total;
+        }
+
+        private void BillForm_Load(object sender, EventArgs e)
+        {
+            //dgvBill = dgv;
+            var itemList = dgvBill.Rows;
+            dgvBill.DataSource = new BindingSource { DataSource = itemList };
+            lbTotalMoney.Text = "$" + calculateTotal().ToString();
+        }
+
+        public void populatedatagridview(List<string[]> data)
+        {
+
+            foreach (var item in data)
+            {
+                dgvBill.Rows.Add(item);
+            }
+
+
+        }
     }
 }

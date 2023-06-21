@@ -7,6 +7,9 @@
     <Compile Update="Components\SetSttWidget.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Components\Toggle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="ManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
