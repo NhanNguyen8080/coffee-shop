@@ -66,6 +66,7 @@
             dgvOrderList = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
             dgvQty = new DataGridViewTextBoxColumn();
+            dgvPrice = new DataGridViewTextBoxColumn();
             dgvCost = new DataGridViewTextBoxColumn();
             btnClearAll = new Guna.UI2.WinForms.Guna2Button();
             lbCurrentOrder = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -87,7 +88,7 @@
             Panel.Location = new Point(0, 0);
             Panel.Name = "Panel";
             Panel.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            Panel.Size = new Size(201, 789);
+            Panel.Size = new Size(201, 785);
             Panel.TabIndex = 1;
             // 
             // CategoryPanel
@@ -161,7 +162,7 @@
             LayoutPanelItem.AutoScroll = true;
             LayoutPanelItem.Location = new Point(200, 85);
             LayoutPanelItem.Name = "LayoutPanelItem";
-            LayoutPanelItem.Size = new Size(689, 704);
+            LayoutPanelItem.Size = new Size(610, 700);
             LayoutPanelItem.TabIndex = 6;
             // 
             // pnItemList
@@ -173,9 +174,9 @@
             pnItemList.Controls.Add(btnClearAll);
             pnItemList.Controls.Add(lbCurrentOrder);
             pnItemList.Dock = DockStyle.Right;
-            pnItemList.Location = new Point(889, 0);
+            pnItemList.Location = new Point(810, 0);
             pnItemList.Name = "pnItemList";
-            pnItemList.Size = new Size(316, 789);
+            pnItemList.Size = new Size(316, 785);
             pnItemList.TabIndex = 7;
             // 
             // btnRemove
@@ -204,7 +205,7 @@
             guna2Panel1.Controls.Add(lbTotal);
             guna2Panel1.CustomizableEdges = customizableEdges13;
             guna2Panel1.FillColor = Color.White;
-            guna2Panel1.Location = new Point(3, 635);
+            guna2Panel1.Location = new Point(3, 631);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges14;
             guna2Panel1.Size = new Size(313, 142);
@@ -216,7 +217,7 @@
             lbMoneyTotal.BackColor = Color.Transparent;
             lbMoneyTotal.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             lbMoneyTotal.ForeColor = Color.Orange;
-            lbMoneyTotal.Location = new Point(249, 19);
+            lbMoneyTotal.Location = new Point(218, 19);
             lbMoneyTotal.Name = "lbMoneyTotal";
             lbMoneyTotal.Size = new Size(35, 39);
             lbMoneyTotal.TabIndex = 4;
@@ -240,7 +241,7 @@
             btnPay.ShadowDecoration.CustomizableEdges = customizableEdges12;
             btnPay.Size = new Size(313, 56);
             btnPay.TabIndex = 3;
-            btnPay.Text = "Pay";
+            btnPay.Text = "Check out";
             btnPay.Click += btnPay_Click;
             // 
             // lbTotal
@@ -279,7 +280,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dgvOrderList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvOrderList.ColumnHeadersHeight = 50;
-            dgvOrderList.Columns.AddRange(new DataGridViewColumn[] { Column1, dgvQty, dgvCost });
+            dgvOrderList.Columns.AddRange(new DataGridViewColumn[] { Column1, dgvQty, dgvPrice, dgvCost });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.Silver;
             dataGridViewCellStyle3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
@@ -319,12 +320,18 @@
             dgvQty.MinimumWidth = 6;
             dgvQty.Name = "dgvQty";
             // 
+            // dgvPrice
+            // 
+            dgvPrice.HeaderText = "Price";
+            dgvPrice.MinimumWidth = 6;
+            dgvPrice.Name = "dgvPrice";
+            dgvPrice.ReadOnly = true;
+            // 
             // dgvCost
             // 
             dgvCost.HeaderText = "Cost";
             dgvCost.MinimumWidth = 6;
             dgvCost.Name = "dgvCost";
-            dgvCost.ReadOnly = true;
             // 
             // btnClearAll
             // 
@@ -366,7 +373,7 @@
             btnSetStatus.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnSetStatus.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             btnSetStatus.ForeColor = Color.White;
-            btnSetStatus.Location = new Point(691, 18);
+            btnSetStatus.Location = new Point(632, 18);
             btnSetStatus.Name = "btnSetStatus";
             btnSetStatus.ShadowDecoration.CustomizableEdges = customizableEdges18;
             btnSetStatus.Size = new Size(172, 45);
@@ -378,7 +385,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1205, 789);
+            ClientSize = new Size(1126, 785);
             Controls.Add(btnSetStatus);
             Controls.Add(pnItemList);
             Controls.Add(LayoutPanelItem);
@@ -411,14 +418,15 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lbCurrentOrder;
         private Guna.UI2.WinForms.Guna2Button btnClearAll;
         private DataGridView dgvOrderList;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn dgvQty;
-        private DataGridViewTextBoxColumn dgvCost;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbMoneyTotal;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbTotal;
         private Guna.UI2.WinForms.Guna2Button btnPay;
         private Guna.UI2.WinForms.Guna2Button btnSetStatus;
         private Guna.UI2.WinForms.Guna2Button btnRemove;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn dgvQty;
+        private DataGridViewTextBoxColumn dgvPrice;
+        private DataGridViewTextBoxColumn dgvCost;
     }
 }

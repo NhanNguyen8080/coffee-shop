@@ -17,6 +17,7 @@ namespace coffee_shop_test
     {
         CategoryService _categoryService = new CategoryService();
         ItemService _itemService = new ItemService();
+        public int userID = 0;
         public ManagerForm()
         {
             InitializeComponent();
@@ -37,7 +38,9 @@ namespace coffee_shop_test
 
         private void btnPOS_Click(object sender, EventArgs e)
         {
-            AddControls(new PosForm());
+            PosForm posForm = new PosForm();
+            AddControls(posForm);
+            posForm.userID = userID;
         }
 
         private void btnCategory_Click(object sender, EventArgs e)

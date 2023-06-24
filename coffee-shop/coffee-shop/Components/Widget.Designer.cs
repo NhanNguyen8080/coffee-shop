@@ -32,10 +32,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Widget));
             pnWidget = new Guna.UI2.WinForms.Guna2Panel();
+            lbStatus = new Label();
             imgImage = new PictureBox();
             lbPrice = new Label();
             lbTitle = new Label();
-            lbStatus = new Label();
             pnWidget.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)imgImage).BeginInit();
             SuspendLayout();
@@ -56,6 +56,15 @@
             pnWidget.Size = new Size(290, 131);
             pnWidget.TabIndex = 0;
             pnWidget.Click += pnWidget_Click;
+            // 
+            // lbStatus
+            // 
+            lbStatus.AutoSize = true;
+            lbStatus.Location = new Point(194, 1);
+            lbStatus.Name = "lbStatus";
+            lbStatus.Size = new Size(49, 20);
+            lbStatus.TabIndex = 3;
+            lbStatus.Text = "Status";
             // 
             // imgImage
             // 
@@ -89,15 +98,6 @@
             lbTitle.Size = new Size(96, 25);
             lbTitle.TabIndex = 0;
             lbTitle.Text = "Capuchino";
-            // 
-            // lbStatus
-            // 
-            lbStatus.AutoSize = true;
-            lbStatus.Location = new Point(194, 1);
-            lbStatus.Name = "lbStatus";
-            lbStatus.Size = new Size(49, 20);
-            lbStatus.TabIndex = 3;
-            lbStatus.Text = "Status";
             // 
             // Widget
             // 

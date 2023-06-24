@@ -39,7 +39,7 @@ namespace Repository.Models
             modelBuilder.Entity<Category>(entity =>
             {
                 entity.HasKey(e => e.TypeId)
-                    .HasName("PK__Categori__516F0395A466B65E");
+                    .HasName("PK__Categori__516F039533A1EC89");
 
                 entity.Property(e => e.TypeId).HasColumnName("TypeID");
 
@@ -74,12 +74,20 @@ namespace Repository.Models
                 entity.Property(e => e.OrderId).HasColumnName("OrderID");
 
                 entity.Property(e => e.OrderDate).HasColumnType("datetime");
+
+                entity.Property(e => e.StaffId).HasColumnName("StaffID");
+
+                entity.HasOne(d => d.Staff)
+                    .WithMany(p => p.Orders)
+                    .HasForeignKey(d => d.StaffId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Users_Orders");
             });
 
             modelBuilder.Entity<OrderDetail>(entity =>
             {
                 entity.HasKey(e => new { e.OrderId, e.ItemId })
-                    .HasName("PK__OrderDet__64B7B39144F9A5B2");
+                    .HasName("PK__OrderDet__64B7B3914626B6D1");
 
                 entity.ToTable("OrderDetail");
 
@@ -106,9 +114,19 @@ namespace Repository.Models
             {
                 entity.Property(e => e.UserId).HasColumnName("UserID");
 
+                entity.Property(e => e.Address).HasMaxLength(100);
+
+                entity.Property(e => e.BirthDate).HasColumnType("date");
+
+                entity.Property(e => e.Fullname)
+                    .IsRequired()
+                    .HasMaxLength(50);
+
                 entity.Property(e => e.Password)
                     .IsRequired()
                     .HasMaxLength(50);
+
+                entity.Property(e => e.Phone).HasMaxLength(10);
 
                 entity.Property(e => e.Username)
                     .IsRequired()

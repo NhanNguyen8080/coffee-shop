@@ -28,32 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pictureBox1 = new PictureBox();
             lbAddress = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             lbHeader = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lbPhone = new Label();
+            lb = new Label();
             lbDate = new Label();
-            label1 = new Label();
             lbStaff = new Label();
             lbStaffName = new Label();
             dgvBill = new DataGridView();
-            Item = new DataGridViewTextBoxColumn();
-            Quantity = new DataGridViewTextBoxColumn();
-            Price = new DataGridViewTextBoxColumn();
-            Cost = new DataGridViewTextBoxColumn();
+            dgvItem = new DataGridViewTextBoxColumn();
+            dgvQty = new DataGridViewTextBoxColumn();
+            dgvPrice = new DataGridViewTextBoxColumn();
+            dgvCost = new DataGridViewTextBoxColumn();
             guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
             lbTotal = new Label();
             lbTotalMoney = new Label();
             guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             lbThank = new Label();
             label2 = new Label();
+            lbOrderID = new Label();
+            lbBillID = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvBill).BeginInit();
             SuspendLayout();
@@ -91,7 +93,7 @@
             // 
             lbHeader.BackColor = Color.Transparent;
             lbHeader.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            lbHeader.Location = new Point(183, 237);
+            lbHeader.Location = new Point(192, 228);
             lbHeader.Name = "lbHeader";
             lbHeader.Size = new Size(41, 30);
             lbHeader.TabIndex = 4;
@@ -107,28 +109,28 @@
             lbPhone.TabIndex = 5;
             lbPhone.Text = "Tel: 01239875645";
             // 
+            // lb
+            // 
+            lb.AutoSize = true;
+            lb.Location = new Point(23, 304);
+            lb.Name = "lb";
+            lb.Size = new Size(151, 20);
+            lb.TabIndex = 6;
+            lb.Text = "Billing date and time:";
+            // 
             // lbDate
             // 
             lbDate.AutoSize = true;
-            lbDate.Location = new Point(23, 283);
+            lbDate.Location = new Point(245, 304);
             lbDate.Name = "lbDate";
-            lbDate.Size = new Size(151, 20);
-            lbDate.TabIndex = 6;
-            lbDate.Text = "Billing date and time:";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(211, 283);
-            label1.Name = "label1";
-            label1.Size = new Size(143, 20);
-            label1.TabIndex = 7;
-            label1.Text = "21/06/2023 21:00:00";
+            lbDate.Size = new Size(143, 20);
+            lbDate.TabIndex = 7;
+            lbDate.Text = "21/06/2023 21:00:00";
             // 
             // lbStaff
             // 
             lbStaff.AutoSize = true;
-            lbStaff.Location = new Point(23, 318);
+            lbStaff.Location = new Point(23, 335);
             lbStaff.Name = "lbStaff";
             lbStaff.Size = new Size(60, 20);
             lbStaff.TabIndex = 8;
@@ -137,7 +139,7 @@
             // lbStaffName
             // 
             lbStaffName.AutoSize = true;
-            lbStaffName.Location = new Point(211, 318);
+            lbStaffName.Location = new Point(245, 335);
             lbStaffName.Name = "lbStaffName";
             lbStaffName.Size = new Size(83, 20);
             lbStaffName.TabIndex = 9;
@@ -147,81 +149,81 @@
             // 
             dgvBill.AllowUserToAddRows = false;
             dgvBill.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = Color.White;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dgvBill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = Color.White;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dgvBill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             dgvBill.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvBill.BackgroundColor = SystemColors.Control;
             dgvBill.BorderStyle = BorderStyle.None;
             dgvBill.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dgvBill.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Control;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = SystemColors.Control;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Control;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            dgvBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             dgvBill.ColumnHeadersHeight = 28;
-            dgvBill.Columns.AddRange(new DataGridViewColumn[] { Item, Quantity, Price, Cost });
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dgvBill.DefaultCellStyle = dataGridViewCellStyle3;
+            dgvBill.Columns.AddRange(new DataGridViewColumn[] { dgvItem, dgvQty, dgvPrice, dgvCost });
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = Color.White;
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
+            dgvBill.DefaultCellStyle = dataGridViewCellStyle7;
             dgvBill.EnableHeadersVisualStyles = false;
-            dgvBill.Location = new Point(12, 358);
+            dgvBill.Location = new Point(12, 371);
             dgvBill.Name = "dgvBill";
             dgvBill.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.White;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dgvBill.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.White;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = Color.White;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
+            dgvBill.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             dgvBill.RowHeadersWidth = 51;
             dgvBill.RowTemplate.Height = 29;
             dgvBill.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvBill.Size = new Size(408, 152);
             dgvBill.TabIndex = 10;
             // 
-            // Item
+            // dgvItem
             // 
-            Item.HeaderText = "Item";
-            Item.MinimumWidth = 6;
-            Item.Name = "Item";
+            dgvItem.HeaderText = "Item";
+            dgvItem.MinimumWidth = 6;
+            dgvItem.Name = "dgvItem";
             // 
-            // Quantity
+            // dgvQty
             // 
-            Quantity.HeaderText = "Qty";
-            Quantity.MinimumWidth = 6;
-            Quantity.Name = "Quantity";
+            dgvQty.HeaderText = "Qty";
+            dgvQty.MinimumWidth = 6;
+            dgvQty.Name = "dgvQty";
             // 
-            // Price
+            // dgvPrice
             // 
-            Price.HeaderText = "Price";
-            Price.MinimumWidth = 6;
-            Price.Name = "Price";
+            dgvPrice.HeaderText = "Price";
+            dgvPrice.MinimumWidth = 6;
+            dgvPrice.Name = "dgvPrice";
             // 
-            // Cost
+            // dgvCost
             // 
-            Cost.HeaderText = "Cost";
-            Cost.MinimumWidth = 6;
-            Cost.Name = "Cost";
+            dgvCost.HeaderText = "Cost";
+            dgvCost.MinimumWidth = 6;
+            dgvCost.Name = "dgvCost";
             // 
             // guna2Separator2
             // 
             guna2Separator2.FillColor = Color.Black;
-            guna2Separator2.Location = new Point(12, 516);
+            guna2Separator2.Location = new Point(12, 529);
             guna2Separator2.Name = "guna2Separator2";
             guna2Separator2.Size = new Size(397, 12);
             guna2Separator2.TabIndex = 11;
@@ -252,12 +254,12 @@
             guna2ControlBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             guna2ControlBox1.BackColor = Color.Black;
             guna2ControlBox1.Cursor = Cursors.Hand;
-            guna2ControlBox1.CustomizableEdges = customizableEdges1;
+            guna2ControlBox1.CustomizableEdges = customizableEdges3;
             guna2ControlBox1.FillColor = SystemColors.Control;
             guna2ControlBox1.IconColor = Color.Black;
             guna2ControlBox1.Location = new Point(396, 2);
             guna2ControlBox1.Name = "guna2ControlBox1";
-            guna2ControlBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2ControlBox1.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2ControlBox1.Size = new Size(33, 28);
             guna2ControlBox1.TabIndex = 16;
             // 
@@ -281,12 +283,32 @@
             label2.TabIndex = 18;
             label2.Text = "Pass Wifi: 88888888";
             // 
+            // lbOrderID
+            // 
+            lbOrderID.AutoSize = true;
+            lbOrderID.Location = new Point(23, 270);
+            lbOrderID.Name = "lbOrderID";
+            lbOrderID.Size = new Size(52, 20);
+            lbOrderID.TabIndex = 19;
+            lbOrderID.Text = "Bill ID:";
+            // 
+            // lbBillID
+            // 
+            lbBillID.AutoSize = true;
+            lbBillID.Location = new Point(245, 270);
+            lbBillID.Name = "lbBillID";
+            lbBillID.Size = new Size(50, 20);
+            lbBillID.TabIndex = 20;
+            lbBillID.Text = "label3";
+            // 
             // BillForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             ClientSize = new Size(432, 739);
+            Controls.Add(lbBillID);
+            Controls.Add(lbOrderID);
             Controls.Add(label2);
             Controls.Add(lbThank);
             Controls.Add(guna2ControlBox1);
@@ -296,8 +318,8 @@
             Controls.Add(dgvBill);
             Controls.Add(lbStaffName);
             Controls.Add(lbStaff);
-            Controls.Add(label1);
             Controls.Add(lbDate);
+            Controls.Add(lb);
             Controls.Add(lbPhone);
             Controls.Add(lbHeader);
             Controls.Add(guna2Separator1);
@@ -320,20 +342,22 @@
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private Guna.UI2.WinForms.Guna2HtmlLabel lbHeader;
         private Label lbPhone;
+        private Label lb;
         private Label lbDate;
-        private Label label1;
         private Label lbStaff;
         private Label lbStaffName;
         private DataGridView dgvBill;
-        private DataGridViewTextBoxColumn Item;
-        private DataGridViewTextBoxColumn Quantity;
-        private DataGridViewTextBoxColumn Price;
-        private DataGridViewTextBoxColumn Cost;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator2;
         private Label lbTotal;
         private Label lbTotalMoney;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private Label lbThank;
         private Label label2;
+        private Label lbOrderID;
+        private Label lbBillID;
+        private DataGridViewTextBoxColumn dgvItem;
+        private DataGridViewTextBoxColumn dgvQty;
+        private DataGridViewTextBoxColumn dgvPrice;
+        private DataGridViewTextBoxColumn dgvCost;
     }
 }

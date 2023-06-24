@@ -293,7 +293,7 @@
             btnPay.ShadowDecoration.CustomizableEdges = customizableEdges20;
             btnPay.Size = new Size(307, 56);
             btnPay.TabIndex = 3;
-            btnPay.Text = "Pay";
+            btnPay.Text = "Check out";
             // 
             // lbTotal
             // 

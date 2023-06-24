@@ -35,7 +35,7 @@ namespace coffee_shop_test.Components
 
         public decimal PPrice { get; set; }
 
-        public bool PStatus
+        public bool InStock 
         {
             get { return ckbSoldOut.Checked; }
             set

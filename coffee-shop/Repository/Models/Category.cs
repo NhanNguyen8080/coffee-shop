@@ -14,6 +14,7 @@ namespace Repository.Models
 
         public int TypeId { get; set; }
         public string TypeName { get; set; }
+        public bool Status { get; set; }
 
         public virtual ICollection<Item> Items { get; set; }
     }

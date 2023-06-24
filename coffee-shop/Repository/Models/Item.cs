@@ -17,6 +17,7 @@ namespace Repository.Models
         public int TypeId { get; set; }
         public string Image { get; set; }
         public decimal Price { get; set; }
+        public bool InStock { get; set; }
         public bool Status { get; set; }
 
         public virtual Category Type { get; set; }

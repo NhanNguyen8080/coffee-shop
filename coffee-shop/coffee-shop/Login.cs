@@ -60,14 +60,18 @@ namespace coffee_shop_test
                 MessageBox.Show("Invalid username and password!", "Notification!", MessageBoxButtons.OK);
                 return;
             }
-            if (user.UserRole == 2)
+            //PosForm posForm = new PosForm();
+            //posForm.userID = user.UserId;
+            //posForm.
+            if (user.UserRole == 1)
             {
                 this.Hide();
-                Form managerForm = new ManagerForm();
+                ManagerForm managerForm = new ManagerForm();
+                managerForm.userID = user.UserId;
                 managerForm.ShowDialog();
                 return;
             }
-            if (user.UserRole == 3)
+            if (user.UserRole == 2)
             {
                 this.Hide();
                 Form staffForm = new StaffForm();

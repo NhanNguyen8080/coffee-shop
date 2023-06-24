@@ -34,7 +34,7 @@ namespace coffee_shop_test
             w.TypeID = typeID;
             w.PImage = image;
             w.ImgSetup();
-            w.PStatus = status;
+            w.InStock = status;
             LayoutPanel.Controls.Add(w);
         }
 

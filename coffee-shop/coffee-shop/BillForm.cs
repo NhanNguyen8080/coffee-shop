@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Repository.Models;
+using Repository.Models.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,41 +14,48 @@ namespace coffee_shop_test
 {
     public partial class BillForm : Form
     {
+        OrderDetailService _orderDetailService = new OrderDetailService();
+        OrderService _orderService = new OrderService();
+        ItemService _itemService = new ItemService();
+        UserService _userService = new UserService();
+        public int OrderID = 0;
         public BillForm()
         {
             InitializeComponent();
         }
 
-        public double calculateTotal()
-        {
-            double total = 0;
-            foreach (DataGridViewRow item in dgvBill.Rows)
-            {
-                total += double.Parse(item.Cells[2].Value.ToString().Replace("$", ""));
-            }
-            return total;
-        }
-
         private void BillForm_Load(object sender, EventArgs e)
         {
-            //dgvBill = dgv;
-            var itemList = dgvBill.Rows;
-            dgvBill.DataSource = new BindingSource { DataSource = itemList };
-            lbTotalMoney.Text = "$" + calculateTotal().ToString();
-        }
-
-        public void populatedatagridview(List<string[]> data)
-        {
-
-            foreach (var item in data)
+            try
             {
-                dgvBill.Rows.Add(item);
+                if (OrderID == 0)
+                {
+                    throw new Exception();
+                }
+                Decimal total = 0;
+                lbDate.Text = _orderService.GetAll().Where(p => p.OrderId.Equals(OrderID)).FirstOrDefault().OrderDate.ToString();
+                lbBillID.Text = OrderID.ToString();
+                int staffID = _orderService.GetAll().Where(p => p.OrderId.Equals(OrderID)).FirstOrDefault().StaffId;
+                lbStaffName.Text = _userService.GetAll().Where(p => p.UserId.Equals(staffID)).FirstOrDefault().Username.ToString();
+                var orderDetail = _orderDetailService.GetAll().Where(p => p.OrderId.Equals(OrderID)).ToList();
+                foreach (OrderDetail detail in orderDetail)
+                {
+                    var itemName = _itemService.GetAll().Where(p => p.ItemId.Equals(detail.ItemId)).FirstOrDefault().ItemName;
+                    dgvBill.Rows.Add(new object[] { itemName, detail.Quantity, detail.Cost, detail.Quantity * detail.Cost });
+                    total += detail.Quantity * detail.Cost;
+                }
+                lbTotalMoney.Text = total.ToString();
+                dgvItem.ReadOnly = true;
+                dgvPrice.ReadOnly = true;
+                dgvQty.ReadOnly = true;
+                dgvCost.ReadOnly = true;
+
+            }
+            catch
+            {
+
             }
 
-        }
-
-        public void populateCashier(String data)
-        {
 
         }
     }
