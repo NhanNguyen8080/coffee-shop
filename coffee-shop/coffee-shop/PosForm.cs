@@ -238,6 +238,7 @@ namespace coffee_shop_test
                 BillForm billForm = new BillForm();
                 billForm.OrderID = orderID;
                 billForm.ShowDialog();
+                dgvOrderList.Rows.Clear();
             }
 
         }
