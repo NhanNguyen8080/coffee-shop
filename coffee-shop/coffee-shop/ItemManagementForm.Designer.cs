@@ -61,7 +61,7 @@
             btnAdd.FillColor = Color.FromArgb(97, 168, 69);
             btnAdd.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnAdd.ForeColor = Color.White;
-            btnAdd.Location = new Point(43, 28);
+            btnAdd.Location = new Point(43, 52);
             btnAdd.Margin = new Padding(3, 4, 3, 4);
             btnAdd.Name = "btnAdd";
             btnAdd.ShadowDecoration.CustomizableEdges = customizableEdges2;
@@ -73,7 +73,7 @@
             // guna2Separator1
             // 
             guna2Separator1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            guna2Separator1.Location = new Point(43, 103);
+            guna2Separator1.Location = new Point(43, 121);
             guna2Separator1.Margin = new Padding(3, 4, 3, 4);
             guna2Separator1.Name = "guna2Separator1";
             guna2Separator1.Size = new Size(909, 13);
@@ -91,7 +91,7 @@
             txtSearch.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtSearch.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             txtSearch.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtSearch.Location = new Point(604, 52);
+            txtSearch.Location = new Point(605, 69);
             txtSearch.Margin = new Padding(3, 4, 3, 4);
             txtSearch.Name = "txtSearch";
             txtSearch.PasswordChar = '\0';
@@ -126,7 +126,7 @@
             dgvItems.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvItems.ColumnHeadersHeight = 35;
             dgvItems.EnableHeadersVisualStyles = false;
-            dgvItems.Location = new Point(43, 123);
+            dgvItems.Location = new Point(43, 141);
             dgvItems.Name = "dgvItems";
             dgvItems.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -155,7 +155,7 @@
             btnUpdate.FillColor = Color.FromArgb(97, 168, 69);
             btnUpdate.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnUpdate.ForeColor = Color.White;
-            btnUpdate.Location = new Point(205, 28);
+            btnUpdate.Location = new Point(205, 52);
             btnUpdate.Margin = new Padding(3, 4, 3, 4);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.ShadowDecoration.CustomizableEdges = customizableEdges6;
@@ -167,7 +167,7 @@
             // btnSearch
             // 
             btnSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnSearch.Location = new Point(865, 52);
+            btnSearch.Location = new Point(865, 69);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(101, 43);
             btnSearch.TabIndex = 20;

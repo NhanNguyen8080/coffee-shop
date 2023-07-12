@@ -16,7 +16,7 @@ namespace coffee_shop_test
     public partial class ItemManagementForm : Form
     {
         ItemService _itemService = new ItemService();
-        List<Repository.Models.Item> items = new List<Repository.Models.Item> ();
+        List<Repository.Models.Item> items = new List<Repository.Models.Item>();
         public ItemManagementForm()
         {
             InitializeComponent();
@@ -83,7 +83,8 @@ namespace coffee_shop_test
                 updateItem.ShowDialog();
                 items = _itemService.GetAll();
                 dgvItems.DataSource = new BindingSource { DataSource = items };
-            } catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("Please choose an item you want to update", "Error", MessageBoxButtons.OK);
             }
