@@ -28,24 +28,6 @@ namespace coffee_shop_test
             InitializeComponent();
 
         }
-        protected override void OnActivated(EventArgs e)
-        {
-            addCategory();
-            List<Item> items = _itemService.GetAll();
-            if (items != null)
-            {
-                foreach (Item item in items)
-                {
-                    var inStock = "Sold out";
-                    Category category = _categoryService.GetAll().Where(p => p.TypeId == item.TypeId).FirstOrDefault();
-                    if (item.InStock)
-                    {
-                        inStock = "";
-                    }
-                    addItem(item.ItemId, item.ItemName, item.Price.ToString(), item.Image, category.TypeName, inStock);
-                }
-            }
-        }
         private void PosForm_Load(object sender, EventArgs e)
         {
             addCategory();
@@ -56,42 +38,45 @@ namespace coffee_shop_test
                 {
                     var status = "Sold out";
                     Category category = _categoryService.GetAll().Where(p => p.TypeId == item.TypeId).FirstOrDefault();
-                    if (item.Status)
+                    if (item.InStock)
                     {
                         status = "";
                     }
-                    addItem(item.ItemId, item.ItemName, item.Price.ToString(), item.Image, category.TypeName, status);
+                    if (item.Status)
+                    {
+                        addItem(item.ItemId, item.ItemName, item.Price.ToString(), item.Image, category.TypeName, status);
+                    }
                 }
             }
         }
 
         public void addCategory()
         {
-            List<Category> categories = _categoryService.GetAll();
-            //CategoryPanel.Controls.Clear();
-            if (categories != null)
-            {
-                var location = 90;
-                foreach (Category category in categories)
+                List<Category> categories = _categoryService.GetAll();
+                //CategoryPanel.Controls.Clear();
+                if (categories != null)
                 {
-                    Guna.UI2.WinForms.Guna2Button b = new Guna.UI2.WinForms.Guna2Button();
-                    b.FillColor = Color.White;
-                    b.BackColor = Color.White;
-                    b.Font = new Font("Segoe UI Bold", 10);
-                    b.Size = new Size(207, 47);
-                    b.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-                    b.TextAlign = (HorizontalAlignment)ContentAlignment.MiddleLeft;
-                    b.Text = category.TypeName.ToString();
-                    b.Location = new Point(0, location);
-                    b.Cursor = Cursors.Hand;
-                    //b.Image = category.Icon.ToString();
-                    b.ForeColor = Color.Black;
+                    var location = 90;
+                    foreach (Category category in categories)
+                    {
+                        Guna.UI2.WinForms.Guna2Button b = new Guna.UI2.WinForms.Guna2Button();
+                        b.FillColor = Color.White;
+                        b.BackColor = Color.White;
+                        b.Font = new Font("Segoe UI Bold", 10);
+                        b.Size = new Size(207, 47);
+                        b.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+                        b.TextAlign = (HorizontalAlignment)ContentAlignment.MiddleLeft;
+                        b.Text = category.TypeName.ToString();
+                        b.Location = new Point(0, location);
+                        b.Cursor = Cursors.Hand;
+                        //b.Image = category.Icon.ToString();
+                        b.ForeColor = Color.Black;
 
-                    b.Click += new EventHandler(b_Click);
-                    CategoryPanel.Controls.Add(b);
-                    location += 70;
+                        b.Click += new EventHandler(b_Click);
+                        CategoryPanel.Controls.Add(b);
+                        location += 70;
+                    }
                 }
-            }
 
         }
 
@@ -170,11 +155,14 @@ namespace coffee_shop_test
                 {
                     var status = "Sold out";
                     Category category = _categoryService.GetAll().Where(p => p.TypeId == item.TypeId).FirstOrDefault();
-                    if (item.Status)
+                    if (item.InStock)
                     {
                         status = "";
                     }
-                    addItem(item.ItemId, item.ItemName, item.Price.ToString(), item.Image, category.TypeName, status);
+                    if (item.Status)
+                    {
+                        addItem(item.ItemId, item.ItemName, item.Price.ToString(), item.Image, category.TypeName, status);
+                    }
                 }
             }
         }

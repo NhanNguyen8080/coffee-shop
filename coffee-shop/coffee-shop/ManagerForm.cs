@@ -45,7 +45,8 @@ namespace coffee_shop_test
 
         private void btnCategory_Click(object sender, EventArgs e)
         {
-
+            Form categoryForm = new CategoryManagementForm();
+            AddControls(categoryForm);
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -53,6 +54,12 @@ namespace coffee_shop_test
             this.Hide();
             Form loginForm = new Login();
             loginForm.ShowDialog();
+        }
+
+        private void btnProduct_Click(object sender, EventArgs e)
+        {
+            Form itemForm = new ItemManagementForm();
+            AddControls(itemForm);
         }
     }
 }

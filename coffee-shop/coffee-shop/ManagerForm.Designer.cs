@@ -30,6 +30,8 @@
         {
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -46,9 +48,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pnBar = new Guna.UI2.WinForms.Guna2Panel();
+            btnLogout = new Guna.UI2.WinForms.Guna2Button();
             pictureBox1 = new PictureBox();
             btnReport = new Guna.UI2.WinForms.Guna2Button();
             btnPOS = new Guna.UI2.WinForms.Guna2Button();
@@ -60,7 +61,6 @@
             btnExit = new Guna.UI2.WinForms.Guna2ControlBox();
             ControlsPanel = new Panel();
             lbWelcome = new Label();
-            btnLogout = new Guna.UI2.WinForms.Guna2Button();
             pnBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ControlsPanel.SuspendLayout();
@@ -86,6 +86,27 @@
             pnBar.ShadowDecoration.CustomizableEdges = customizableEdges20;
             pnBar.Size = new Size(1205, 68);
             pnBar.TabIndex = 8;
+            // 
+            // btnLogout
+            // 
+            btnLogout.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnLogout.BackColor = Color.Gray;
+            btnLogout.BorderRadius = 20;
+            btnLogout.CustomizableEdges = customizableEdges1;
+            btnLogout.DisabledState.BorderColor = Color.DarkGray;
+            btnLogout.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnLogout.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnLogout.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnLogout.FillColor = Color.Maroon;
+            btnLogout.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnLogout.ForeColor = Color.Wheat;
+            btnLogout.Location = new Point(917, 6);
+            btnLogout.Name = "btnLogout";
+            btnLogout.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnLogout.Size = new Size(118, 56);
+            btnLogout.TabIndex = 12;
+            btnLogout.Text = "Logout";
+            btnLogout.Click += btnLogout_Click;
             // 
             // pictureBox1
             // 
@@ -155,6 +176,7 @@
             btnProduct.Size = new Size(111, 61);
             btnProduct.TabIndex = 8;
             btnProduct.Text = "Products";
+            btnProduct.Click += btnProduct_Click;
             // 
             // btnStaff
             // 
@@ -246,7 +268,7 @@
             // 
             // lbWelcome
             // 
-            lbWelcome.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lbWelcome.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             lbWelcome.AutoSize = true;
             lbWelcome.Font = new Font("SimSun-ExtB", 70.2000046F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             lbWelcome.ForeColor = Color.FromArgb(97, 168, 69);
@@ -255,26 +277,6 @@
             lbWelcome.Size = new Size(470, 118);
             lbWelcome.TabIndex = 0;
             lbWelcome.Text = "Welcome";
-            // 
-            // btnLogout
-            // 
-            btnLogout.BackColor = Color.Gray;
-            btnLogout.BorderRadius = 20;
-            btnLogout.CustomizableEdges = customizableEdges1;
-            btnLogout.DisabledState.BorderColor = Color.DarkGray;
-            btnLogout.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnLogout.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnLogout.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnLogout.FillColor = Color.Maroon;
-            btnLogout.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnLogout.ForeColor = Color.Wheat;
-            btnLogout.Location = new Point(917, 6);
-            btnLogout.Name = "btnLogout";
-            btnLogout.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnLogout.Size = new Size(118, 56);
-            btnLogout.TabIndex = 12;
-            btnLogout.Text = "Logout";
-            btnLogout.Click += btnLogout_Click;
             // 
             // ManagerForm
             // 

@@ -45,8 +45,10 @@ namespace Repository.Models.Services
 
         public void Update(T entity)
         {
-            var tracker = _context.Attach(entity);
-            tracker.State = EntityState.Modified;
+            //var tracker = _context.Attach(entity);
+            //tracker.State = EntityState.Modified;
+            //_context.SaveChanges();
+            _dbSet.Update(entity);
             _context.SaveChanges();
         }
     }

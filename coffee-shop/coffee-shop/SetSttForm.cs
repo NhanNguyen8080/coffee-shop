@@ -23,7 +23,7 @@ namespace coffee_shop_test
 
         }
 
-        public void addItem(int ItemID, string ItemName, decimal ItemPrice, String image, int typeID, bool status)
+        public void addItem(int ItemID, string ItemName, decimal ItemPrice, String image, int typeID, bool inStock)
         {
 
             SetSttWidget w = new SetSttWidget();
@@ -34,7 +34,7 @@ namespace coffee_shop_test
             w.TypeID = typeID;
             w.PImage = image;
             w.ImgSetup();
-            w.InStock = status;
+            w.InStock = inStock;
             LayoutPanel.Controls.Add(w);
         }
 
@@ -51,7 +51,7 @@ namespace coffee_shop_test
                     //    status = "True";
                     //}
                     Category category = _categoryService.GetAll().Where(p => p.TypeId == item.TypeId).FirstOrDefault();
-                    addItem(item.ItemId, item.ItemName, item.Price, item.Image, category.TypeId, item.Status);
+                    addItem(item.ItemId, item.ItemName, item.Price, item.Image, category.TypeId, item.InStock);
                 }
             }
         }
@@ -83,7 +83,7 @@ namespace coffee_shop_test
                         TypeId = setSttWidget.TypeID,
                         Price = setSttWidget.PPrice,
                         Image = setSttWidget.PImage,
-                        Status = !setSttWidget.GetCkb()
+                        InStock = !setSttWidget.GetCkb()
                     };
                     items.Add(item);
                 }
@@ -92,7 +92,7 @@ namespace coffee_shop_test
             {
                 if (item != null)
                 {
-                    _itemService.updateStatus(item, item.Status);
+                    _itemService.updateStatus(item, item.InStock);
                 }
             }
             var fora = Application.OpenForms.Count;

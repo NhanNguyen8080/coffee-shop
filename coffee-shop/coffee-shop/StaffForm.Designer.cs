@@ -294,6 +294,7 @@
             btnPay.Size = new Size(307, 56);
             btnPay.TabIndex = 3;
             btnPay.Text = "Check out";
+            btnPay.Click += btnPay_Click;
             // 
             // lbTotal
             // 

@@ -19,10 +19,10 @@ namespace Repository.Models.Services
             _items = _dbContext.Items;
         }
 
-        public void updateStatus(Item item, bool status)
+        public void updateStatus(Item item, bool inStock)
         {
             var it = _items.Where(x => x.ItemId == item.ItemId).FirstOrDefault();
-            it.Status = status;
+            it.InStock = inStock;
             _dbContext.Entry<Item>(it).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             _dbContext.SaveChanges();
         }

@@ -142,3 +142,7 @@ C:\Users\talax\OneDrive\Máy tính\PRN-group-project\coffee-shop-group-project\c
 C:\Users\talax\OneDrive\Máy tính\PRN-group-project\coffee-shop-group-project\coffee-shop\coffee-shop\obj\Debug\net6.0-windows\coffee_shop_test.Components.SetSttWidget.resources
 C:\Users\talax\OneDrive\Máy tính\PRN-group-project\coffee-shop-group-project\coffee-shop\coffee-shop\obj\Debug\net6.0-windows\coffee_shop_test.BillForm.resources
 C:\Users\talax\OneDrive\Máy tính\PRN-group-project\coffee-shop-group-project\coffee-shop\coffee-shop\obj\Debug\net6.0-windows\coffee_shop_test.Components.Toggle.resources
+C:\Users\talax\OneDrive\Máy tính\PRN-group-project\coffee-shop-group-project\coffee-shop\coffee-shop\obj\Debug\net6.0-windows\coffee_shop_test.AddCategory.resources
+C:\Users\talax\OneDrive\Máy tính\PRN-group-project\coffee-shop-group-project\coffee-shop\coffee-shop\obj\Debug\net6.0-windows\coffee_shop_test.AddNewItem.resources
+C:\Users\talax\OneDrive\Máy tính\PRN-group-project\coffee-shop-group-project\coffee-shop\coffee-shop\obj\Debug\net6.0-windows\coffee_shop_test.UpdateItem.resources
+C:\Users\talax\OneDrive\Máy tính\PRN-group-project\coffee-shop-group-project\coffee-shop\coffee-shop\obj\Debug\net6.0-windows\coffee_shop_test.UpdateCategory.resources

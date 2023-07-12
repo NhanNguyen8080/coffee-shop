@@ -1,4 +1,5 @@
 ﻿using coffee_shop_test.Components;
+using Microsoft.VisualBasic.ApplicationServices;
 using Repository.Models;
 using Repository.Models.Services;
 using System;
@@ -20,6 +21,9 @@ namespace coffee_shop_test
         CoffeeShopDBContext _context;
         CategoryService _categoryService = new CategoryService();
         ItemService _itemService = new ItemService();
+        OrderDetailService _orderDetailService = new OrderDetailService();
+        OrderService _orderService = new OrderService();
+        public int userID { get; set; }
         public StaffForm()
         {
             InitializeComponent();
@@ -45,15 +49,18 @@ namespace coffee_shop_test
             List<Item> items = _itemService.GetAll();
             if (items != null)
             {
-                var status = "";
                 foreach (Item item in items)
                 {
+                    var status = "Sold out";
                     Category category = _categoryService.GetAll().Where(p => p.TypeId == item.TypeId).FirstOrDefault();
-                    if (!item.Status)
+                    if (item.InStock)
                     {
-                        status = "Sold out";
+                        status = "";
                     }
-                    addItem(item.ItemId, item.ItemName, item.Price.ToString(), item.Image, category.TypeName, status);
+                    if (item.Status)
+                    {
+                        addItem(item.ItemId, item.ItemName, item.Price.ToString(), item.Image, category.TypeName, status);
+                    }
                 }
             }
         }
@@ -103,7 +110,7 @@ namespace coffee_shop_test
         //    AddControls(new frmItem());
         //}
 
-        public void addItem(int ItemID, string ItemName, String ItemPrice, String icon, String category, String status)
+        public void addItem(int ItemID, string ItemName, String ItemPrice, String icon, String category, String inStock)
         {
             Widget w = new Widget();
             w.Size = new Size(320, 180);
@@ -112,8 +119,12 @@ namespace coffee_shop_test
             w.PPrice = ItemPrice;
             w.PCategory = category;
             w.PImage = System.Drawing.Image.FromFile(icon);
+            w.PStatus = inStock;
+            if (w.PStatus.Equals("Sold out"))
+            {
+                w.Enabled = false;
+            }
             LayoutPanelItem.Controls.Add(w);
-            w.PStatus = status;
             w.OnSelect += (ss, ee) =>
             {
                 var wdg = (Widget)ss;
@@ -122,17 +133,17 @@ namespace coffee_shop_test
                     if (item.Cells[0].Value.ToString() == wdg.lbTitle.Text)
                     {
                         item.Cells[1].Value = int.Parse(item.Cells[1].Value.ToString()) + 1;
-                        item.Cells[2].Value = ((int.Parse(item.Cells[1].Value.ToString()))
-                        * double.Parse(wdg.lbPrice.Text.Replace("$", ""))).ToString("C2");
+                        item.Cells[3].Value = double.Parse(((int.Parse(item.Cells[1].Value.ToString()))
+                        * double.Parse(wdg.lbPrice.Text.Replace("$", ""))).ToString()).ToString("C2");
                         lbMoneyTotal.Text = "$" + calculateTotal().ToString();
                         return;
                     }
+                    //string[] row = { "" + wdg.lbTitle.Text, "" + item.Cells[1].Value, "" + wdg.lbPrice.Text, "" + 5 };
+                    //data.Add(row);
                 }
-                dgvOrderList.Rows.Add(new object[] { wdg.lbTitle.Text, 1, wdg.lbPrice.Text });
+                dgvOrderList.Rows.Add(new object[] { wdg.lbTitle.Text, 1, wdg.lbPrice.Text, wdg.lbPrice.Text });
                 lbMoneyTotal.Text = "$" + calculateTotal().ToString();
             };
-
-
         }
 
         public double calculateTotal()
@@ -140,7 +151,7 @@ namespace coffee_shop_test
             double total = 0;
             foreach (DataGridViewRow item in dgvOrderList.Rows)
             {
-                total += double.Parse(item.Cells[2].Value.ToString().Replace("$", ""));
+                total += double.Parse(item.Cells[3].Value.ToString().Replace("$", ""));
             }
             return total;
         }
@@ -160,15 +171,20 @@ namespace coffee_shop_test
             List<Item> items = _itemService.GetAll();
             if (items != null)
             {
-                var status = "";
-                foreach (var item in items)
+                foreach (Item item in items)
                 {
-                    status = "Sold out";
+                    var status = "Sold out";
                     Category category = _categoryService.GetAll().Where(p => p.TypeId == item.TypeId).FirstOrDefault();
-                    addItem(item.ItemId, item.ItemName, item.Price.ToString(), item.Image, category.TypeName, status);
+                    if (item.InStock)
+                    {
+                        status = "";
+                    }
+                    if (item.Status)
+                    {
+                        addItem(item.ItemId, item.ItemName, item.Price.ToString(), item.Image, category.TypeName, status);
+                    }
                 }
             }
-
         }
 
         private void btnClearAll_Click(object sender, EventArgs e)
@@ -201,8 +217,42 @@ namespace coffee_shop_test
         {
             var SetSttForm = new SetSttForm();
             SetSttForm.ShowDialog();
-            this.Hide();
-            StaffForm_Load(sender, e);
+        }
+
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+            if (dgvOrderList.Rows.Count == 0)
+            {
+                MessageBox.Show("Order List is empty", "Notification", MessageBoxButtons.OK);
+            }
+            else
+            {
+                int staffID = userID;
+                Order order = new Order();
+                order.StaffId = staffID;
+                order.OrderDate = DateTime.Now;
+                order.Status = true;
+                _orderService.Add(order);
+                var orderID = _orderService.GetAll().Last().OrderId;
+                foreach (DataGridViewRow item in dgvOrderList.Rows)
+                {
+                    var itemID = _itemService.GetAll().Where(p => p.ItemName.Equals(item.Cells[0].Value)).FirstOrDefault().ItemId;
+                    var quantity = item.Cells[1].Value.ToString();
+                    var cost = item.Cells[2].Value.ToString();
+                    var newCost = cost.Substring(1);
+                    OrderDetail orderDetail = new OrderDetail();
+                    orderDetail.OrderId = orderID;
+                    orderDetail.ItemId = itemID;
+                    orderDetail.Quantity = int.Parse(quantity);
+                    orderDetail.Cost = Decimal.Parse(newCost);
+                    _orderDetailService.Add(orderDetail);
+                }
+
+                BillForm billForm = new BillForm();
+                billForm.OrderID = orderID;
+                billForm.ShowDialog();
+                dgvOrderList.Rows.Clear();
+            }
         }
     }
 }
