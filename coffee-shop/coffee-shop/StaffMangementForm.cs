@@ -16,30 +16,5 @@ namespace coffee_shop_test
         {
             InitializeComponent();
         }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvStaff_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }
