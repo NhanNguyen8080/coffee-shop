@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\talax\\OneDrive\\Máy tính\\coffee-shop-group-project\\coffee-shop\\coffee-shop\\coffee-shop-test.csproj": {}
+    "C:\\Users\\Admin\\Desktop\\New folder (9)\\coffee-shop-group-project\\coffee-shop\\coffee-shop\\coffee-shop-test.csproj": {}
   },
   "projects": {
-    "C:\\Users\\talax\\OneDrive\\Máy tính\\coffee-shop-group-project\\coffee-shop\\coffee-shop\\coffee-shop-test.csproj": {
+    "C:\\Users\\Admin\\Desktop\\New folder (9)\\coffee-shop-group-project\\coffee-shop\\coffee-shop\\coffee-shop-test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\talax\\OneDrive\\Máy tính\\coffee-shop-group-project\\coffee-shop\\coffee-shop\\coffee-shop-test.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\New folder (9)\\coffee-shop-group-project\\coffee-shop\\coffee-shop\\coffee-shop-test.csproj",
         "projectName": "coffee-shop-test",
-        "projectPath": "C:\\Users\\talax\\OneDrive\\Máy tính\\coffee-shop-group-project\\coffee-shop\\coffee-shop\\coffee-shop-test.csproj",
-        "packagesPath": "C:\\Users\\talax\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\talax\\OneDrive\\Máy tính\\coffee-shop-group-project\\coffee-shop\\coffee-shop\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\New folder (9)\\coffee-shop-group-project\\coffee-shop\\coffee-shop\\coffee-shop-test.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\New folder (9)\\coffee-shop-group-project\\coffee-shop\\coffee-shop\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\talax\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "C:\\Users\\talax\\OneDrive\\Máy tính\\coffee-shop-group-project\\coffee-shop\\Repository\\Repository.csproj": {
-                "projectPath": "C:\\Users\\talax\\OneDrive\\Máy tính\\coffee-shop-group-project\\coffee-shop\\Repository\\Repository.csproj"
+              "C:\\Users\\Admin\\Desktop\\New folder (9)\\coffee-shop-group-project\\coffee-shop\\Repository\\Repository.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\New folder (9)\\coffee-shop-group-project\\coffee-shop\\Repository\\Repository.csproj"
               }
             }
           }
@@ -68,21 +68,21 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\talax\\OneDrive\\Máy tính\\coffee-shop-group-project\\coffee-shop\\Repository\\Repository.csproj": {
+    "C:\\Users\\Admin\\Desktop\\New folder (9)\\coffee-shop-group-project\\coffee-shop\\Repository\\Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\talax\\OneDrive\\Máy tính\\coffee-shop-group-project\\coffee-shop\\Repository\\Repository.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\New folder (9)\\coffee-shop-group-project\\coffee-shop\\Repository\\Repository.csproj",
         "projectName": "Repository",
-        "projectPath": "C:\\Users\\talax\\OneDrive\\Máy tính\\coffee-shop-group-project\\coffee-shop\\Repository\\Repository.csproj",
-        "packagesPath": "C:\\Users\\talax\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\talax\\OneDrive\\Máy tính\\coffee-shop-group-project\\coffee-shop\\Repository\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\New folder (9)\\coffee-shop-group-project\\coffee-shop\\Repository\\Repository.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\New folder (9)\\coffee-shop-group-project\\coffee-shop\\Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\talax\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -153,7 +153,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
