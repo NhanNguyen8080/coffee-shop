@@ -2635,11 +2635,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\talax\\OneDrive\\Máy tính\\PRN-group-project\\coffee-shop-group-project\\coffee-shop\\Repository\\Repository.csproj",
+      "projectUniqueName": "C:\\Users\\talax\\OneDrive\\Máy tính\\coffee-shop-group-project\\coffee-shop\\Repository\\Repository.csproj",
       "projectName": "Repository",
-      "projectPath": "C:\\Users\\talax\\OneDrive\\Máy tính\\PRN-group-project\\coffee-shop-group-project\\coffee-shop\\Repository\\Repository.csproj",
+      "projectPath": "C:\\Users\\talax\\OneDrive\\Máy tính\\coffee-shop-group-project\\coffee-shop\\Repository\\Repository.csproj",
       "packagesPath": "C:\\Users\\talax\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\talax\\OneDrive\\Máy tính\\PRN-group-project\\coffee-shop-group-project\\coffee-shop\\Repository\\obj\\",
+      "outputPath": "C:\\Users\\talax\\OneDrive\\Máy tính\\coffee-shop-group-project\\coffee-shop\\Repository\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\talax\\AppData\\Roaming\\NuGet\\NuGet.Config",

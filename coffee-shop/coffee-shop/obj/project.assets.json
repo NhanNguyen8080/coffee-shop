@@ -2679,11 +2679,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\talax\\OneDrive\\Máy tính\\PRN-group-project\\coffee-shop-group-project\\coffee-shop\\coffee-shop\\coffee-shop-test.csproj",
+      "projectUniqueName": "C:\\Users\\talax\\OneDrive\\Máy tính\\coffee-shop-group-project\\coffee-shop\\coffee-shop\\coffee-shop-test.csproj",
       "projectName": "coffee-shop-test",
-      "projectPath": "C:\\Users\\talax\\OneDrive\\Máy tính\\PRN-group-project\\coffee-shop-group-project\\coffee-shop\\coffee-shop\\coffee-shop-test.csproj",
+      "projectPath": "C:\\Users\\talax\\OneDrive\\Máy tính\\coffee-shop-group-project\\coffee-shop\\coffee-shop\\coffee-shop-test.csproj",
       "packagesPath": "C:\\Users\\talax\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\talax\\OneDrive\\Máy tính\\PRN-group-project\\coffee-shop-group-project\\coffee-shop\\coffee-shop\\obj\\",
+      "outputPath": "C:\\Users\\talax\\OneDrive\\Máy tính\\coffee-shop-group-project\\coffee-shop\\coffee-shop\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\talax\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2700,8 +2700,8 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\talax\\OneDrive\\Máy tính\\PRN-group-project\\coffee-shop-group-project\\coffee-shop\\Repository\\Repository.csproj": {
-              "projectPath": "C:\\Users\\talax\\OneDrive\\Máy tính\\PRN-group-project\\coffee-shop-group-project\\coffee-shop\\Repository\\Repository.csproj"
+            "C:\\Users\\talax\\OneDrive\\Máy tính\\coffee-shop-group-project\\coffee-shop\\Repository\\Repository.csproj": {
+              "projectPath": "C:\\Users\\talax\\OneDrive\\Máy tính\\coffee-shop-group-project\\coffee-shop\\Repository\\Repository.csproj"
             }
           }
         }

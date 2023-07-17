@@ -39,14 +39,6 @@ namespace coffee_shop_test
                 {
                     rdInStockFalse.Checked = true;
                 }
-                if (item.Status)
-                {
-                    rdStatusTrue.Checked = true;
-                }
-                else
-                {
-                    rdStatusFalse.Checked = true;
-                }
                 image.ImageLocation = item.Image;
             }
         }
@@ -63,12 +55,10 @@ namespace coffee_shop_test
             if (item != null)
             {
                 bool inStock = returnResult(pnlInStock, "Available");
-                bool status = returnResult(pnlStatus, "Exist");
                 item.ItemName = txtName.Text;
                 item.Price = numPrice.Value;
                 item.TypeId = cbCat.SelectedValue.GetHashCode();
                 item.InStock = inStock;
-                item.Status = status;
                 if (imageLocation.Equals(""))
                 {
                     imageLocation = item.Image;

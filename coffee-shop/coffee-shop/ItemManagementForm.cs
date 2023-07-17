@@ -20,7 +20,7 @@ namespace coffee_shop_test
         public ItemManagementForm()
         {
             InitializeComponent();
-            items = _itemService.GetAll();
+            items = _itemService.GetAll().Where(p => p.Status).ToList();
             dgvItems.DataSource = new BindingSource { DataSource = items };
             dgvItems.ReadOnly = true;
         }
@@ -40,7 +40,7 @@ namespace coffee_shop_test
             {
                 itemList = itemList.Where(p => p.ItemName.ToLower().Contains(searchValue.ToLower())).ToList();
             }
-            dgvItems.DataSource = new BindingSource { DataSource = itemList };
+            dgvItems.DataSource = new BindingSource { DataSource = itemList }; 
         }
 
         private void dgvItems_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -89,5 +89,15 @@ namespace coffee_shop_test
                 MessageBox.Show("Please choose an item you want to update", "Error", MessageBoxButtons.OK);
             }
         }
+    }
+
+    class ItemView
+    {
+        public int ItemId { get; set; }
+        public string ItemName { get; set; }
+        public int TypeId { get; set; }
+        public string Image { get; set; }
+        public decimal Price { get; set; }
+        public bool InStock { get; set; }
     }
 }

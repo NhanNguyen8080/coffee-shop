@@ -1,4 +1,5 @@
-﻿using Repository.Models.Services;
+﻿using Repository.Models;
+using Repository.Models.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +19,7 @@ namespace coffee_shop_test
         public CategoryManagementForm()
         {
             InitializeComponent();
-            var categories = _categoryService.GetAll();
+            var categories = _categoryService.GetAll().Where(p => p.Status).ToList();
             dgvCateogry.DataSource = new BindingSource { DataSource = categories };
             dgvCateogry.ReadOnly = true;
         }
@@ -44,7 +45,8 @@ namespace coffee_shop_test
                 update.ShowDialog();
                 dgvCateogry.Refresh();
                 dgvCateogry.DataSource = new BindingSource { DataSource = _categoryService.GetAll() };
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("Please choose a category you want to update", "Error", MessageBoxButtons.OK);
             }

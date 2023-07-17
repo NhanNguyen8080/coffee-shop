@@ -143,7 +143,6 @@
             dgvItems.Size = new Size(909, 339);
             dgvItems.TabIndex = 17;
             dgvItems.CellContentClick += dgvItems_CellContentClick;
-            dgvItems.CellDoubleClick += dgvItems_CellDoubleClick;
             // 
             // btnUpdate
             // 
@@ -210,7 +209,7 @@
             btnDelete.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnDelete.Size = new Size(137, 38);
             btnDelete.TabIndex = 19;
-            btnDelete.Text = "Update Status";
+            btnDelete.Text = "Delete";
             btnDelete.Click += btnDelete_Click;
             // 
             // ItemManagementForm

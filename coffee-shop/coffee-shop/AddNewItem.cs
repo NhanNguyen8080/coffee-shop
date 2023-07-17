@@ -40,7 +40,7 @@ namespace coffee_shop_test
                 return;
             }
             bool inStock = returnResult(pnlInStock, "Available");
-            bool status = returnResult(pnlStatus, "Exist");
+            bool status = true;
             item.ItemName = txtName.Text;
             item.Price = numPrice.Value;
             item.Status = status;

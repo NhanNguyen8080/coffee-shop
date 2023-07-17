@@ -48,9 +48,6 @@
             lbUpdate = new Label();
             numPrice = new NumericUpDown();
             image = new PictureBox();
-            pnlStatus = new Panel();
-            rdStatusFalse = new RadioButton();
-            rdStatusTrue = new RadioButton();
             pnlInStock = new Panel();
             rdInStockFalse = new RadioButton();
             rdInStockTrue = new RadioButton();
@@ -58,7 +55,6 @@
             label6 = new Label();
             cbCat = new Guna.UI2.WinForms.Guna2ComboBox();
             label5 = new Label();
-            label4 = new Label();
             label3 = new Label();
             txtName = new Guna.UI2.WinForms.Guna2TextBox();
             label2 = new Label();
@@ -70,7 +66,6 @@
             guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numPrice).BeginInit();
             ((System.ComponentModel.ISupportInitialize)image).BeginInit();
-            pnlStatus.SuspendLayout();
             pnlInStock.SuspendLayout();
             guna2Panel2.SuspendLayout();
             SuspendLayout();
@@ -102,6 +97,7 @@
             // 
             // numPrice
             // 
+            numPrice.DecimalPlaces = 2;
             numPrice.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
             numPrice.Location = new Point(11, 312);
             numPrice.Name = "numPrice";
@@ -116,37 +112,6 @@
             image.SizeMode = PictureBoxSizeMode.Zoom;
             image.TabIndex = 51;
             image.TabStop = false;
-            // 
-            // pnlStatus
-            // 
-            pnlStatus.Controls.Add(rdStatusFalse);
-            pnlStatus.Controls.Add(rdStatusTrue);
-            pnlStatus.Location = new Point(13, 584);
-            pnlStatus.Name = "pnlStatus";
-            pnlStatus.Size = new Size(250, 42);
-            pnlStatus.TabIndex = 50;
-            // 
-            // rdStatusFalse
-            // 
-            rdStatusFalse.AutoSize = true;
-            rdStatusFalse.Location = new Point(141, 3);
-            rdStatusFalse.Name = "rdStatusFalse";
-            rdStatusFalse.Size = new Size(89, 24);
-            rdStatusFalse.TabIndex = 35;
-            rdStatusFalse.TabStop = true;
-            rdStatusFalse.Text = "Not Exist";
-            rdStatusFalse.UseVisualStyleBackColor = true;
-            // 
-            // rdStatusTrue
-            // 
-            rdStatusTrue.AutoSize = true;
-            rdStatusTrue.Location = new Point(6, 3);
-            rdStatusTrue.Name = "rdStatusTrue";
-            rdStatusTrue.Size = new Size(60, 24);
-            rdStatusTrue.TabIndex = 36;
-            rdStatusTrue.TabStop = true;
-            rdStatusTrue.Text = "Exist";
-            rdStatusTrue.UseVisualStyleBackColor = true;
             // 
             // pnlInStock
             // 
@@ -234,15 +199,6 @@
             label5.Size = new Size(57, 20);
             label5.TabIndex = 45;
             label5.Text = "InStock";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(11, 549);
-            label4.Name = "label4";
-            label4.Size = new Size(49, 20);
-            label4.TabIndex = 44;
-            label4.Text = "Status";
             // 
             // label3
             // 
@@ -381,13 +337,11 @@
             Controls.Add(guna2Panel2);
             Controls.Add(numPrice);
             Controls.Add(image);
-            Controls.Add(pnlStatus);
             Controls.Add(pnlInStock);
             Controls.Add(btnBrowse);
             Controls.Add(label6);
             Controls.Add(cbCat);
             Controls.Add(label5);
-            Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(txtName);
             Controls.Add(label2);
@@ -399,8 +353,6 @@
             guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numPrice).EndInit();
             ((System.ComponentModel.ISupportInitialize)image).EndInit();
-            pnlStatus.ResumeLayout(false);
-            pnlStatus.PerformLayout();
             pnlInStock.ResumeLayout(false);
             pnlInStock.PerformLayout();
             guna2Panel2.ResumeLayout(false);
@@ -414,9 +366,6 @@
         private Label lbUpdate;
         private NumericUpDown numPrice;
         private PictureBox image;
-        private Panel pnlStatus;
-        private RadioButton rdStatusFalse;
-        private RadioButton rdStatusTrue;
         private Panel pnlInStock;
         private RadioButton rdInStockFalse;
         private RadioButton rdInStockTrue;
@@ -424,7 +373,6 @@
         private Label label6;
         private Guna.UI2.WinForms.Guna2ComboBox cbCat;
         private Label label5;
-        private Label label4;
         private Label label3;
         public Guna.UI2.WinForms.Guna2TextBox txtName;
         private Label label2;
